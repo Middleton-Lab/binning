@@ -1,238 +1,56 @@
 \name{bin.running}
-\Rdversion{1.1}
+\Rdversion{0.02}
 \alias{bin.running}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
+\title{Aggregate Wheel Running Data}
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Given an arbitrary bin size in minutes and an arbitrary interval number from which to start aggregating, \code{bin.running} takes a .DAT (comma-separated) or .txt (tab-delimited) wheel running data file read in using \code{\link{read.dat}} and aggregates wheel revolutions, the maximum interval per bin, the number of intervals per bin with >0 revolutions, and the mean RPM per bin.
 }
 \usage{
-bin.running(whldat, bin.size = 10, first.bin.size = 10, bins.out = "ALL", bin.start = 1, start.at.1pm = TRUE, computer)
+bin.running(whldat, bin.size, bins.out = "ALL", bin.start = 1, start.at.1pm = TRUE, computer)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{whldat}{
-%%     ~~Describe \code{whldat} here~~
+  \item{whldat}{an \code{n} intervals by 157 (computers A-C) or 151 (computer D) column data.frame, most often read in using \code{\link{read.dat}.}}
+  \item{bin.size}{the size (in minutes) of the bins to return. Defaults to 10 minute bins.}
+  \item{bins.out}{number of bins to return. Defaults to \code{\dQuote{ALL}} -- Start at the first row and bin all the way to the end of the file, removing an incomplete last bin (if necessary).}
+  \item{bin.start}{the interval number where the binning should start. Defaults to 1.}
+  \item{start.at.1pm}{logical. if \code{TRUE} (default), \code{bin.running} will delete all intervals before 1:00 PM.}
+  \item{computer}{text string code for which computer recorded \code{whldata}.}
 }
-  \item{bin.size}{
-%%     ~~Describe \code{bin.size} here~~
-}
-  \item{first.bin.size}{
-%%     ~~Describe \code{first.bin.size} here~~
-}
-  \item{bins.out}{
-%%     ~~Describe \code{bins.out} here~~
-}
-  \item{bin.start}{
-%%     ~~Describe \code{bin.start} here~~
-}
-  \item{start.at.1pm}{
-%%     ~~Describe \code{start.at.1pm} here~~
-}
-  \item{computer}{
-%%     ~~Describe \code{computer} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+%%\details{
+%%Wheel running data files can be read using \code{\link{read.dat}}. Aggregating proceeds 
+%%}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\code{bin.running} returns a list of two elements:
+\item{aggr}{the aggregated wheel running data. The dimensions are \code{[bins.out, 1+4*bins.out]}. Contains sum of revolutions per bin (\code{run_XX}), the maximum number of revolutions in a single interval per bin (\code{max_XX}), number of intervals per bin with >0 revolutions (\code{int_XX}), and the mean number of revolutions per minute for a bin (\code{rpm_XX}).}
+\item{bin.times}{\code{data.frame} with columns for \code{bin}, \code{hour}, and \code{minute}.}
 }
-\references{
+%%\references{
 %% ~put references to the literature/web site here ~
-}
+%%}
 \author{
-%%  ~~who you are~~
+Kevin Middleton (kmm@csusb.edu)
 }
-\note{
+%%\note{
 %%  ~~further notes~~
-}
+%%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{read.dat}}, \code{\link{plot.running}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# Load the 2006-11-05 running data for computer A
+data(A061105)
 
-## The function is currently defined as
-function(whldat,
-                        bin.size = 10,
-                        first.bin.size = 10,    # Currently = bin.size only
-                        bins.out = 'ALL',
-                        bin.start = 1,
-                        start.at.1pm = TRUE,     # Not currently implemented
-                        computer                 # A, B, C, D
-                ){
-# file: bin.running.R
+# Aggregate running data into 20 minute bins
+A.aggr <- bin.running(A061105, computer = 'A', bin.size = 20)
 
-# Created by Kevin Middleton (kmm@csusb.edu)
-# 10 Aug 2007 - 0.00 Forked from aggr.running.R as a general function
-# 15 Aug 2007 - 0.01 First working version
-# 09 Apr 2009 - Resumed work
-#			- 0.02
-
-# Output:
-#   Sum of revolutions per bin (run_XX)
-#   Max interval per bin (max_XX)
-#   Number of intervals per bin with > 0 revolutions (int_XX)
-#   RPM = Sum / Int (rpm_XX)
-
-##########################################
-# PRELIMINARIES
-##########################################
-
-# Check wheel running data. There should be either 157 or 151 columns corresponding
-#   to either 50 (A-C) or 48 wheels (D)
-if (ncol(whldat) != 157){
-    if (ncol(whldat) != 151){
-        stop("The wheel running file does not have the correct number of columns.", call. = FALSE)
-    }
-  }
-
-# If no first bin size is specified, then set to bin size
-if (!exists('first.bin.size')) first.bin.size <- bin.size
-
-##########################################
-# END PRELIMINARIES
-##########################################
-
-# Calculate the number of wheels (50 or 48)
-# The first 7 columns are time/date information
-numwhl <- (ncol(whldat)-7)/3
-
-# Remove columns we don't need:
-#	time (other than hour and min), date
-#	The "seq" parameters remove the forward and backward columns,
-#		leaving only the sum column
-whldat.str <- whldat[ , -c(3:7, seq(8, ncol(whldat), 3), seq(9, ncol(whldat), 3))]
-
-# Rename the remaining columns: hr, min, and XX for wheel number
-names(whldat.str)[1] <- "hr"
-names(whldat.str)[2] <- "min"
-names(whldat.str)[3:(numwhl+2)] <- paste(1:numwhl, sep = "")
-
-# Add a column for the interval number
-whldat.str <- cbind(whldat.str, interval = 1:nrow(whldat))
-
-#if (start.at.1pm){
-    # Adjust bin.start to reflect removed bins
-    # Drop any intervals before 13:00
-#    whldat.str <- subset(whldat.str, hr != 12)
-#}
-
-# If binning does not start at bin 1
-if (bin.start != 1){
-    whldat.zero <- whldat.str[(bin.start + 1):nrow(whldat.str),]
-  } else {
-    whldat.zero <- whldat.str
-  }
-
-# Set up binning
-n.bins <- nrow(whldat.zero)\%/\%bin.size      # Number of bins
-leftover <- nrow(whldat.zero)\%\%bin.size     # # of rows in incomplete last bin
-
-if (bins.out == 'ALL') bins.out <- n.bins
-if (n.bins < bins.out){
-    stop("bins.out is too large. Not enough bins in data.", call. = FALSE)
-  }
-
-# Remove rows in incomplete last bin (if incomplete)
-if (leftover > 0) whldat.zero <- whldat.zero[1:(nrow(whldat.zero)-leftover),]
-
-# Column used for aggregating
-minbin <- rep(1:n.bins, each = bin.size)
-
-# Split off hour & minute columns
-times <- data.frame(hr = whldat.zero$hr, minute = whldat.zero$min, minbin) 
-whldat.zero <- whldat.zero[,-(1:2)]
-
-# Aggregate wheel running sum revolutions per bin
-running <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
-for (i in 1:numwhl){
-    agr.run <- aggregate(
-        list(run = whldat.zero[,i]),
-        by = list(bin = minbin),
-        FUN = sum)
-    running[,i] <- agr.run[,2]
-  }
-
-# Aggregate maximum interval per bin
-maxint <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
-for (i in 1:numwhl){
-    agr.max <- aggregate(
-        list(run = whldat.zero[,i]),
-        by = list(bin = minbin),
-        FUN = max)
-    maxint[,i] <- agr.max[,2]
-  }
-
-# Aggregate number of intervals per bin with > 0 revolution
-intsum <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
-for (i in 1:numwhl){
-    agr.int <- aggregate(
-        list(run = whldat.zero[,i]),
-        by = list(bin = minbin),
-        FUN = function(x){sum(x > 0)})
-    intsum[,i] <- agr.int[,2]
-  }
-
-# Calculate RPM. Use ifelse to avoid NaNs resulting from 0/0.
-rpm <- ifelse(running == 0, 0, running / intsum)
-
-# Truncate matrices to only return only rows 1:bins.out
-running.trunc <- running[1:bins.out, ]
-maxint.trunc <- maxint[1:bins.out, ]
-intsum.trunc <- intsum[1:bins.out, ]
-rpm.trunc <- rpm[1:bins.out, ]
-
-# Set up output column names.
-binnum <- 1:bins.out
-Run <- paste("run", binnum, sep = "_")
-Max <- paste("max", binnum, sep = "_")
-Int <- paste("int", binnum, sep = "_")
-RPM <- paste("rpm", binnum, sep = "_")
-
-# Transpose to get wheels as rows and bins as columns
-t.running <- data.frame(t(running.trunc))
-names(t.running) <- Run
-t.maxint <- data.frame(t(maxint.trunc))
-names(t.maxint) <- Max
-t.intsum <- data.frame(t(intsum.trunc))
-names(t.intsum) <- Int
-t.rpm <- data.frame(t(rpm.trunc))
-names(t.rpm) <- RPM
-
-# Set wheel numbers based on computer
-if (computer == 'A') whlnum <-   1:50
-if (computer == 'B') whlnum <-  51:100
-if (computer == 'C') whlnum <- 101:150
-if (computer == 'D') whlnum <- 151:198
-
-aggr <- cbind(whlnum, t.running, t.maxint, t.intsum, t.rpm)
-
-# Aggregate hours and minutes
-# xx Not sure =what this is doing
-bin.times <- aggregate(
-	list(times), 
-	by = list(bin = minbin),
-	FUN = min)[, -4]
-
-# Return aggregated data
-list(aggr, bin.times)
-  }
+# Plot aggregated data for wheel number 1.
+plot.running(A.aggr[[1]], A.aggr[[2]], whlnum = 1)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ file }
+\keyword{ data }

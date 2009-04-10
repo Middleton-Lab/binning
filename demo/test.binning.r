@@ -14,10 +14,10 @@ B061105  <- read.dat('data/061105B.DAT')
 C061105  <- read.dat('data/061105C.DAT')
 D061105  <- read.dat('data/061105D.DAT')
 
-setwd('~')
-package.skeleton(list=c('read.dat', 'stackdata',"plot.running","bin.running",
-	'lineaggr', 'linetypeaggr', 'A061105', 'B061105', 'C061105', 'D061105'), 
-	name="binning")
+#setwd('~')
+#package.skeleton(list=c('read.dat', 'stackdata',"plot.running","bin.running",
+#	'lineaggr', 'linetypeaggr', 'A061105', 'B061105', 'C061105', 'D061105'), 
+#	name="binning")
 
 # MANUAL
 whldat <- A
@@ -31,10 +31,10 @@ computer <- 'A'
 
 # TEST
 bin.size <- 5
-aggrA <- bin.running(A, computer = 'A', bin.size = bin.size)
-aggrB <- bin.running(B, computer = 'B', bin.size = bin.size)
-aggrC <- bin.running(C, computer = 'C', bin.size = bin.size)
-aggrD <- bin.running(D, computer = 'D', bin.size = bin.size)
+aggrA <- bin.running(A061105, computer = 'A', bin.size = 10)
+aggrB <- bin.running(B061105, computer = 'B', bin.size = bin.size)
+aggrC <- bin.running(C061105, computer = 'C', bin.size = bin.size)
+aggrD <- bin.running(D061105, computer = 'D', bin.size = bin.size)
 
 running <- stackdata(aggrA[[1]], aggrB[[1]], aggrC[[1]], aggrD[[1]])
 time.data <- aggrA[[2]]

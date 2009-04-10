@@ -1,86 +1,56 @@
 \name{plot.running}
-\Rdversion{1.1}
+\Rdversion{0.02}
 \alias{plot.running}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
+\title{Plot Aggregated Wheel Running Data}
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plot aggregated wheel running data for a single wheel.
 }
 \usage{
 plot.running(running, time.data, whlnum, whichplot = "run")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{running}{
-%%     ~~Describe \code{running} here~~
+  \item{running}{data.frame. aggregated wheel running data from \code{bin.running}.}
+  \item{time.data}{data.frame. time information for \code{running} from \code{bin.running}.}
+  \item{whlnum}{number of wheel to plot running data for. Currently only one number is accepted.}
+  \item{whichplot}{which set of variables will be plotted. Currently only \code{run} is implemented. Future support for \code{max}, \code{int}, and \code{rpm} are planned.}
 }
-  \item{time.data}{
-%%     ~~Describe \code{time.data} here~~
-}
-  \item{whlnum}{
-%%     ~~Describe \code{whlnum} here~~
-}
-  \item{whichplot}{
-%%     ~~Describe \code{whichplot} here~~
-}
-}
-\details{
+%%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
-\value{
+%%}
+%%\value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{
+%%}
+%%\references{
 %% ~put references to the literature/web site here ~
-}
+%%}
 \author{
-%%  ~~who you are~~
+Kevin Middleton (kmm@csusb.edu)
 }
-\note{
+%%\note{
 %%  ~~further notes~~
-}
+%%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{read.dat}}, \code{\link{bin.running}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# Load the 2006-11-05 running data for computer A
+data(A061105)
 
-## The function is currently defined as
-function(running, time.data, whlnum, whichplot = 'run'){
+# Aggregate running data into 20 minute bins
+A.aggr <- bin.running(A061105, computer = 'A', bin.size = 20)
 
-# Receive a list output from bin.running
-# Options to plot run, max, int, rpm
-
-n.bins <- nrow(time.data)
-
-subs <- running[whlnum,]
-
-if (whichplot == 'run') {
-    dat <- t(subs[,2:(n.bins+1)])
-    ylabel <- 'Revolutions per bin'
-  }
-
-hrmin <- strptime(paste(time.data$hr, time.data$min, '00', sep = ':'), '\%T')
-hrmin <- format(hrmin, '\%H:\%M')
-
-plot(dat, type = 'l', axes = FALSE, ylab = ylabel, xlab = 'Hour')
-axis(1, at = seq(1, n.bins, 12), labels = hrmin[seq(1, n.bins, 12)], las = 2, cex.axis = 0.75)
-axis(2)
-box()
-  }
+# Plot aggregated data for wheel number 1.
+plot.running(A.aggr[[1]], A.aggr[[2]], whlnum = 1)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ data }
+\keyword{ aplot }

@@ -3,10 +3,10 @@
 \alias{A061105}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+Wheel Running Data for 2006-11-05 for Computer A
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+Wheel running data for 2006-11-05 for computer A.
 }
 \usage{data(A061105)}
 \format{

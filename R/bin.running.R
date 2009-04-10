@@ -1,10 +1,9 @@
 bin.running <- function(whldat,
-                        bin.size = 10,
-                        first.bin.size = 10,    # Currently = bin.size only
+                        bin.size,
                         bins.out = 'ALL',
                         bin.start = 1,
-                        start.at.1pm = TRUE,     # Not currently implemented
-                        computer                 # A, B, C, D
+                        start.at.1pm = TRUE,
+                        computer
                 ){
 # file: bin.running.R
 
@@ -12,13 +11,20 @@ bin.running <- function(whldat,
 # 10 Aug 2007 - 0.00 Forked from aggr.running.R as a general function
 # 15 Aug 2007 - 0.01 First working version
 # 09 Apr 2009 - Resumed work
-#			- 0.02
+#			  - 0.02 added to github; work on documentation
 
 # Output:
-#   Sum of revolutions per bin (run_XX)
-#   Max interval per bin (max_XX)
-#   Number of intervals per bin with > 0 revolutions (int_XX)
-#   RPM = Sum / Int (rpm_XX)
+#	List of:
+#		aggr:
+#			whlnum specific to computer A-D
+#   		Sum of revolutions per bin (run_XX)
+#   		Max interval per bin (max_XX)
+#   		Number of intervals per bin with > 0 revolutions (int_XX)
+#   		RPM = Sum / Int (rpm_XX)
+#		bin.times:
+#			bin: bin number
+#			hour: hour that the bin starts
+#			minute: minute that the bin starts
 
 ##########################################
 # PRELIMINARIES
@@ -32,8 +38,17 @@ if (ncol(whldat) != 157){
     }
 }
 
+# Check the computer is A-D
+if (!match(computer, c('A', 'B', 'C', 'D'), nomatch = FALSE, incomparables = FALSE)){
+	stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.", call. = FALSE)}
+
 # If no first bin size is specified, then set to bin size
-if (!exists('first.bin.size')) first.bin.size <- bin.size
+#if (!exists('first.bin.size')) first.bin.size <- bin.size
+
+# Currently can only handle first.bin.size = bin.size
+#if (first.bin.size != bin.size){
+#    stop("Option not yet implemented: first.bin.size must be the same as bin.size.", call. = FALSE)
+#}
 
 ##########################################
 # END PRELIMINARIES
@@ -42,6 +57,19 @@ if (!exists('first.bin.size')) first.bin.size <- bin.size
 # Calculate the number of wheels (50 or 48)
 # The first 7 columns are time/date information
 numwhl <- (ncol(whldat)-7)/3
+
+# Check for the right number of wheels for the chosen computer.
+if (computer == 'A' & numwhl != 50){
+	stop("computer A should have 50 wheels", call. = FALSE)}
+
+if (computer == 'B' & numwhl != 50){
+	stop("computer B should have 50 wheels", call. = FALSE)}
+
+if (computer == 'C' & numwhl != 50){
+	stop("computer C should have 50 wheels", call. = FALSE)}
+
+if (computer == 'D' & numwhl != 48){
+	stop("computer D should have 48 wheels", call. = FALSE)}
 
 # Remove columns we don't need:
 #	time (other than hour and min), date
@@ -57,11 +85,11 @@ names(whldat.str)[3:(numwhl+2)] <- paste(1:numwhl, sep = "")
 # Add a column for the interval number
 whldat.str <- cbind(whldat.str, interval = 1:nrow(whldat))
 
-#if (start.at.1pm){
+if (start.at.1pm){
     # Adjust bin.start to reflect removed bins
     # Drop any intervals before 13:00
-#    whldat.str <- subset(whldat.str, hr != 12)
-#}
+    whldat.str <- subset(whldat.str, hr != 12)
+}
 
 # If binning does not start at bin 1
 if (bin.start != 1){

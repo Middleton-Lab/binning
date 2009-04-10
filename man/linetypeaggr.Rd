@@ -1,12 +1,11 @@
 \name{linetypeaggr}
-\Rdversion{1.1}
+\Rdversion{0.002}
 \alias{linetypeaggr}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Aggregate by Linetype
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Aggregate wheel running data by linetype.
 }
 \usage{
 linetypeaggr(dat)
@@ -17,9 +16,9 @@ linetypeaggr(dat)
 %%     ~~Describe \code{dat} here~~
 }
 }
-\details{
+%%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%%}
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -27,15 +26,15 @@ linetypeaggr(dat)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%%\references{
 %% ~put references to the literature/web site here ~
-}
+%%}
 \author{
-%%  ~~who you are~~
+Kevin Middleton (kmm@csusb.edu)
 }
-\note{
+%%\note{
 %%  ~~further notes~~
-}
+%%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -58,5 +57,4 @@ aggregate(
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ ts }
