@@ -43,6 +43,6 @@ bins.out <- 6
 backward <- TRUE
 computer <- 'A'
 whldat <- A061105
-aggrA <- bin.running(A061105, computer = 'A', bin.size = bin.size, bin.start = 601, bins.out = 6, backward = TRUE)
+aggrA <- bin.running(A, computer = 'A', bin.size = bin.size, bin.start = 601, bins.out = 6, backward = TRUE)
 
 
