@@ -1,6 +1,6 @@
-\name{g}
+\name{read.dat}
 \Rdversion{1.1}
-\alias{g}
+\alias{read.dat}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -9,15 +9,15 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-g(x, y)
+read.dat(file, tab.delim = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{file}{
+%%     ~~Describe \code{file} here~~
 }
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{tab.delim}{
+%%     ~~Describe \code{tab.delim} here~~
 }
 }
 \details{
@@ -51,7 +51,23 @@ g(x, y)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function(x,y) x-y
+function(file, tab.delim = FALSE){
+
+# function to read .DAT files from wheel running computers
+# Created by Kevin Middleton (kmm@csusb.edu)
+# 10 Aug 2007 - First working version
+
+# file: path to DAT file
+# tab.delim: T/F for whether the file is tab delimited or not. Default is FALSE,
+#   becuse unmodified DAT files are comma-separated.
+# Returns a matrix whldat
+
+if (tab.delim) {
+    whldat <- read.delim(file, header = FALSE, sep = '\t')
+    } else {
+    whldat <- read.csv(file, header = FALSE)}
+whldat
+  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

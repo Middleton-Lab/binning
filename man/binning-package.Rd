@@ -1,7 +1,7 @@
-\name{mypkg-package}
+\name{binning-package}
 \Rdversion{1.1}
-\alias{mypkg-package}
-\alias{mypkg}
+\alias{binning-package}
+\alias{binning}
 \docType{package}
 \title{
 What the package does (short line)
@@ -13,10 +13,10 @@ More about what it does (maybe more than one line)
 }
 \details{
 \tabular{ll}{
-Package: \tab mypkg\cr
+Package: \tab binning\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2009-04-09\cr
+Date: \tab 2009-04-10\cr
 License: \tab What license is it under?\cr
 LazyLoad: \tab yes\cr
 }

@@ -6,11 +6,18 @@ source('R/read.dat.R')
 source('R/stackdata.R')
 source('R/plot.running.R')
 source('R/bin.running.R')
+source('R/lineaggr.R')
+source('R/linetypeaggr.R')
 
-A  <- read.dat('data/061105A.DAT')
-B  <- read.dat('data/061105B.DAT')
-C  <- read.dat('data/061105C.DAT')
-D  <- read.dat('data/061105D.DAT')
+A061105  <- read.dat('data/061105A.DAT')
+B061105  <- read.dat('data/061105B.DAT')
+C061105  <- read.dat('data/061105C.DAT')
+D061105  <- read.dat('data/061105D.DAT')
+
+setwd('~')
+package.skeleton(list=c('read.dat', 'stackdata',"plot.running","bin.running",
+	'lineaggr', 'linetypeaggr', 'A061105', 'B061105', 'C061105', 'D061105'), 
+	name="binning")
 
 # MANUAL
 whldat <- A

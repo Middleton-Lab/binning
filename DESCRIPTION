@@ -1,10 +1,10 @@
 Package: binning
 Type: Package
-Title: What the package does (short line)
+Title: Binning wheel running data
 Version: 0.02
-Date: 2009-04-09
+Date: 2009-04-10
 Author: Kevin Middleton
 Maintainer: Kevin Middleton <kmm@csusb.edu>
 Description: Binning wheel running data
-License: This software is distributed under the terms of the GNU General Public License Version 2, June 1991.
+License: GPL
 LazyLoad: yes

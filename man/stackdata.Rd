@@ -1,6 +1,6 @@
-\name{f}
+\name{stackdata}
 \Rdversion{1.1}
-\alias{f}
+\alias{stackdata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -9,15 +9,12 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-f(x, y)
+stackdata(...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{\dots}{
+%%     ~~Describe \code{\dots} here~~
 }
 }
 \details{
@@ -51,7 +48,13 @@ f(x, y)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function(x,y) x+y
+function(...){
+    # Need to deal with n.bins and time
+    # use match.arg()
+    nms <- names(list(...))
+    
+    stacked <- rbind(...)
+  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
