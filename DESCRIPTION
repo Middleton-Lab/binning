@@ -6,5 +6,10 @@ Date: 2009-04-09
 Author: Kevin Middleton
 Maintainer: Kevin Middleton <kmm#csusb.edu>
 Description: Binning wheel running data
-License: What license is it under?
+License: This software is distributed under the terms of the GNU General
+Public License Version 2, June 1991.  The terms of this license
+are in a file called COPYING which you should have received with
+this software and which can be displayed by RShowDoc("COPYING").
+If you have not received a copy of this file, you can obtain one
+at http://www.R-project.org/licenses/.
 LazyLoad: yes
