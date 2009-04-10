@@ -6,11 +6,12 @@ bin.running <- function(whldat,
                         start.at.1pm = TRUE,     # Not currently implemented
                         computer                 # A, B, C, D
                 ){
-# file: binning.R
+# file: bin.running.R
 
 # Created by Kevin Middleton (kmm@csusb.edu)
 # 10 Aug 2007 - 0.00 Forked from aggr.running.R as a general function
 # 15 Aug 2007 - 0.01 First working version
+# 09 Apr 2009 - Resumed work
 
 # Output:
 #   Sum of revolutions per bin (run_XX)
