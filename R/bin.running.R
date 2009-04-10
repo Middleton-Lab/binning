@@ -12,6 +12,7 @@ bin.running <- function(whldat,
 # 10 Aug 2007 - 0.00 Forked from aggr.running.R as a general function
 # 15 Aug 2007 - 0.01 First working version
 # 09 Apr 2009 - Resumed work
+#			- 0.02
 
 # Output:
 #   Sum of revolutions per bin (run_XX)
