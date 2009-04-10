@@ -1,23 +1,36 @@
 # test.binning.R
 
-source('c:/SELECT/binning/read.dat.R')
-source('c:/SELECT/binning/stackdata.R')
-source('c:/SELECT/binning/plot.running.R')
-source('c:/SELECT/binning/binning.R')
+setwd('/Users/kmm/Documents/Dropbox/Projects/Mouse Project/binning')
 
-A061105  <- read.dat('c:/SELECT/binning/061105/061105A.DAT')
-B061105  <- read.dat('c:/SELECT/binning/061105/061105B.DAT')
-C061105  <- read.dat('c:/SELECT/binning/061105/061105C.DAT')
-D061105  <- read.dat('c:/SELECT/binning/061105/061105D.DAT')
+source('R/read.dat.R')
+source('R/stackdata.R')
+source('R/plot.running.R')
+source('R/bin.running.R')
 
-bin.size <- 20
-aggrA <- bin.running(A061105, computer = 'A', bin.size = bin.size)
-aggrB <- bin.running(B061105, computer = 'B', bin.size = bin.size)
-aggrC <- bin.running(C061105, computer = 'C', bin.size = bin.size)
-aggrD <- bin.running(D061105, computer = 'D', bin.size = bin.size)
+A  <- read.dat('data/061105A.DAT')
+B  <- read.dat('data/061105B.DAT')
+C  <- read.dat('data/061105C.DAT')
+D  <- read.dat('data/061105D.DAT')
 
-running <- stackdata(aggrA$running, aggrB$running, aggrC$running, aggrD$running)
-time.data <- aggrA$bin.time
+# MANUAL
+whldat <- A
+bin.size <- 10
+first.bin.size <- 10
+bins.out <- 'ALL'
+bin.start <- 1
+start.at.1pm <- TRUE
+computer <- 'A'
+
+
+# TEST
+bin.size <- 5
+aggrA <- bin.running(A, computer = 'A', bin.size = bin.size)
+aggrB <- bin.running(B, computer = 'B', bin.size = bin.size)
+aggrC <- bin.running(C, computer = 'C', bin.size = bin.size)
+aggrD <- bin.running(D, computer = 'D', bin.size = bin.size)
+
+running <- stackdata(aggrA[[1]], aggrB[[1]], aggrC[[1]], aggrD[[1]])
+time.data <- aggrA[[2]]
 
 plot.running(running, time.data, whlnum = 1)
 
@@ -33,14 +46,3 @@ whldat <- A061105
 aggrA <- bin.running(A061105, computer = 'A', bin.size = bin.size, bin.start = 601, bins.out = 6, backward = TRUE)
 
 
-
-
-
-
-badwhl <- whldatA[,1:50]
-bin.running(badwhl)
-
-setwd('c:/SELECT/binning/')
-package.skeleton(name = 'runagg', list = c('read.dat', 'bin.running', 'stackdata',
-    'A061105', 'B061105', 'C061105', 'D061105'),
-    force = TRUE)

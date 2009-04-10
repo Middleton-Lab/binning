@@ -14,8 +14,11 @@ if (whichplot == 'run') {
     ylabel <- 'Revolutions per bin'
 }
 
+hrmin <- strptime(paste(time.data$hr, time.data$min, '00', sep = ':'), '%T')
+hrmin <- format(hrmin, '%H:%M')
+
 plot(dat, type = 'l', axes = FALSE, ylab = ylabel, xlab = 'Hour')
-axis(1, at = 1:n.bins, labels = time.data$hour)
+axis(1, at = seq(1, n.bins, 12), labels = hrmin[seq(1, n.bins, 12)], las = 2, cex.axis = 0.75)
 axis(2)
 box()
 }

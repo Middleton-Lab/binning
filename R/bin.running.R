@@ -85,12 +85,8 @@ if (leftover > 0) whldat.zero <- whldat.zero[1:(nrow(whldat.zero)-leftover),]
 minbin <- rep(1:n.bins, each = bin.size)
 
 # Split off hour & minute columns
-hr <- whldat.zero$hr
-minute <- whldat.zero$min
+times <- data.frame(hr = whldat.zero$hr, minute = whldat.zero$min, minbin) 
 whldat.zero <- whldat.zero[,-(1:2)]
-
-# Aggregate hours and minutes
-hours <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
 
 # Aggregate wheel running sum revolutions per bin
 running <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
@@ -126,10 +122,10 @@ for (i in 1:numwhl){
 rpm <- ifelse(running == 0, 0, running / intsum)
 
 # Truncate matrices to only return only rows 1:bins.out
-running.trunc <- running[1:bins.out,]
-maxint.trunc <- maxint[1:bins.out,]
-intsum.trunc <- intsum[1:bins.out,]
-rpm.trunc <- rpm[1:bins.out,]
+running.trunc <- running[1:bins.out, ]
+maxint.trunc <- maxint[1:bins.out, ]
+intsum.trunc <- intsum[1:bins.out, ]
+rpm.trunc <- rpm[1:bins.out, ]
 
 # Set up output column names.
 binnum <- 1:bins.out
@@ -156,6 +152,13 @@ if (computer == 'D') whlnum <- 151:198
 
 aggr <- cbind(whlnum, t.running, t.maxint, t.intsum, t.rpm)
 
+# Aggregate hours and minutes
+# xx Not sure =what this is doing
+bin.times <- aggregate(
+	list(times), 
+	by = list(bin = minbin),
+	FUN = min)[, -4]
+
 # Return aggregated data
-aggr
+list(aggr, bin.times)
 }
