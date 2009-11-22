@@ -1,9 +1,11 @@
 bin.running <- function(whldat,
+#						whl = 'ALL',
                         bin.size,
                         bins.out = 'ALL',
                         bin.start = 1,
                         start.at.1pm = TRUE,
-                        computer
+                        computer,
+                        header = NULL
                 ){
 # file: bin.running.R
 
@@ -12,6 +14,7 @@ bin.running <- function(whldat,
 # 15 Aug 2007 - 0.01 First working version
 # 09 Apr 2009 - Resumed work
 #			  - 0.02 added to github; work on documentation
+# 11 Apr 2009 - 0.03 Conversion to S3
 
 # Output:
 #	List of:
@@ -43,12 +46,15 @@ if (!match(computer, c('A', 'B', 'C', 'D'), nomatch = FALSE, incomparables = FAL
 	stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.", call. = FALSE)}
 
 # If no first bin size is specified, then set to bin size
-#if (!exists('first.bin.size')) first.bin.size <- bin.size
+if (!exists('first.bin.size')) first.bin.size <- bin.size
 
 # Currently can only handle first.bin.size = bin.size
-#if (first.bin.size != bin.size){
-#    stop("Option not yet implemented: first.bin.size must be the same as bin.size.", call. = FALSE)
-#}
+if (first.bin.size != bin.size){
+    stop("Option not yet implemented: first.bin.size must be the same as bin.size.", call. = FALSE)
+}
+
+# xx Add a check that whl is within the range of computer
+
 
 ##########################################
 # END PRELIMINARIES
@@ -88,6 +94,7 @@ whldat.str <- cbind(whldat.str, interval = 1:nrow(whldat))
 if (start.at.1pm){
     # Adjust bin.start to reflect removed bins
     # Drop any intervals before 13:00
+    # xx this line gets an error in R CMD check
     whldat.str <- subset(whldat.str, hr != 12)
 }
 
@@ -116,6 +123,11 @@ minbin <- rep(1:n.bins, each = bin.size)
 # Split off hour & minute columns
 times <- data.frame(hr = whldat.zero$hr, minute = whldat.zero$min, minbin) 
 whldat.zero <- whldat.zero[,-(1:2)]
+
+# xxx
+#if (whl != 'ALL'){
+#	whldat.zero <- whldat.str[, whl]
+#	}
 
 # Aggregate wheel running sum revolutions per bin
 running <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
@@ -179,15 +191,17 @@ if (computer == 'B') whlnum <-  51:100
 if (computer == 'C') whlnum <- 101:150
 if (computer == 'D') whlnum <- 151:198
 
-aggr <- cbind(whlnum, t.running, t.maxint, t.intsum, t.rpm)
 
 # Aggregate hours and minutes
-# xx Not sure =what this is doing
 bin.times <- aggregate(
 	list(times), 
 	by = list(bin = minbin),
 	FUN = min)[, -4]
 
 # Return aggregated data
-list(aggr, bin.times)
+aggrdat <- list(whlnum = whlnum, run = t.running, max = t.maxint, int = t.intsum, rpm = t.rpm, 
+	times = bin.times, whldat = whldat, bin.size = bin.size, n.bins = n.bins, 
+	bin.start = bin.start, start.at.1pm = start.at.1pm, computer = computer, header = header)
+class(aggrdat) <- 'running'
+aggrdat
 }

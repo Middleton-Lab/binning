@@ -1,5 +1,4 @@
 \name{A061105}
-\Rdversion{1.1}
 \alias{A061105}
 \docType{data}
 \title{

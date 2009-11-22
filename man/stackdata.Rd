@@ -1,5 +1,4 @@
 \name{stackdata}
-\Rdversion{0.02}
 \alias{stackdata}
 \title{
 Stack data frames on top of one another.

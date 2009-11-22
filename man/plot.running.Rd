@@ -1,19 +1,19 @@
 \name{plot.running}
-\Rdversion{0.02}
 \alias{plot.running}
 \title{Plot Aggregated Wheel Running Data}
 \description{
-Plot aggregated wheel running data for a single wheel.
+This function plots aggregated wheel running data.
 }
+
 \usage{
-plot.running(running, time.data, whlnum, whichplot = "run")
+\method{plot}{running}(x, whlnum, whichplot = "run", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{running}{data.frame. aggregated wheel running data from \code{bin.running}.}
-  \item{time.data}{data.frame. time information for \code{running} from \code{bin.running}.}
+  \item{x}{an object of class \code{running}, most likely returned by \code{bin.running}.}
   \item{whlnum}{number of wheel to plot running data for. Currently only one number is accepted.}
-  \item{whichplot}{which set of variables will be plotted. Currently only \code{run} is implemented. Future support for \code{max}, \code{int}, and \code{rpm} are planned.}
+  \item{whichplot}{which set of aggregated data will be plotted: \code{run}, \code{max}, \code{int}, and \code{rpm} are valid.}
+  \item{...}{further arguments passed to \code{plot}}
 }
 %%\details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -48,7 +48,10 @@ data(A061105)
 A.aggr <- bin.running(A061105, computer = 'A', bin.size = 20)
 
 # Plot aggregated data for wheel number 1.
-plot.running(A.aggr[[1]], A.aggr[[2]], whlnum = 1)
+plot(A.aggr, whlnum = 1, whichplot = 'run', col = 'red')
+plot(A.aggr, whlnum = 1, whichplot = 'max')
+plot(A.aggr, whlnum = 1, whichplot = 'int')
+plot(A.aggr, whlnum = 1, whichplot = 'rpm')
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

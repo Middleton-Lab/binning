@@ -1,5 +1,4 @@
 \name{lineaggr}
-\Rdversion{0.02}
 \alias{lineaggr}
 \title{
 Aggregate by Line

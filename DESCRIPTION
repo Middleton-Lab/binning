@@ -1,8 +1,8 @@
 Package: binning
 Type: Package
 Title: Binning wheel running data
-Version: 0.02
-Date: 2009-04-10
+Version: 0.03
+Date: 2009-04-11
 Author: Kevin Middleton
 Maintainer: Kevin Middleton <kmm@csusb.edu>
 Description: Binning wheel running data

@@ -1,5 +1,4 @@
 \name{binning-package}
-\Rdversion{1.1}
 \alias{binning-package}
 \alias{binning}
 \docType{package}

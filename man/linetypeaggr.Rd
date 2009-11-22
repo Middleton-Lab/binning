@@ -1,5 +1,4 @@
 \name{linetypeaggr}
-\Rdversion{0.002}
 \alias{linetypeaggr}
 \title{
 Aggregate by Linetype

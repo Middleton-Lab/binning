@@ -20,26 +20,35 @@ D061105  <- read.dat('data/061105D.DAT')
 #	name="binning")
 
 # MANUAL
-whldat <- A
+whldat <- A061105
 bin.size <- 10
 first.bin.size <- 10
 bins.out <- 'ALL'
 bin.start <- 1
 start.at.1pm <- TRUE
 computer <- 'A'
+header <- NULL
 
 
 # TEST
-bin.size <- 5
-aggrA <- bin.running(A061105, computer = 'A', bin.size = 10)
-aggrB <- bin.running(B061105, computer = 'B', bin.size = bin.size)
-aggrC <- bin.running(C061105, computer = 'C', bin.size = bin.size)
-aggrD <- bin.running(D061105, computer = 'D', bin.size = bin.size)
+bin.size <- 10
+aggr.A <- bin.running(A061105, computer = 'A', bin.size = 10)
+aggr.A <- bin.running(A061105, whl = 1, computer = 'A', bin.size = 10)
+aggr.B <- bin.running(B061105, computer = 'B', bin.size = bin.size)
+aggr.C <- bin.running(C061105, computer = 'C', bin.size = bin.size)
+aggr.D <- bin.running(D061105, computer = 'D', bin.size = bin.size)
 
 running <- stackdata(aggrA[[1]], aggrB[[1]], aggrC[[1]], aggrD[[1]])
 time.data <- aggrA[[2]]
 
-plot.running(running, time.data, whlnum = 1)
+plot(aggr.A, whlnum = 1, whichplot = 'run')
+plot(aggr.A, whlnum = 1, whichplot = 'run', col = 'red')
+
+plot(aggr.A, whlnum = 1, whichplot = 'max')
+plot(aggr.A, whlnum = 1, whichplot = 'int')
+plot(aggr.A, whlnum = 1, whichplot = 'rpm')
+
+plot(aggr.B, whlnum = 75, whichplot = 'run')
 
 # ask for Excel file with the whlnum, mouseid, line, linetype, sex
 

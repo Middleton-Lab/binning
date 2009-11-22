@@ -1,5 +1,4 @@
 \name{read.dat}
-\Rdversion{0.02}
 \alias{read.dat}
 \title{Read Wheel Running Data}
 \description{
