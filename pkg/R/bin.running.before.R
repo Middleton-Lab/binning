@@ -30,6 +30,7 @@ whldat.str <- cbind(whldat.str, interval = 1:nrow(whldat))
 # END COPIED FROM bin.running.R
 
 # Reset interval to be 0
+interval <- NULL; rm(interval)
 whldat.str$interval <- whldat.str$interval - (bin.start - bin.size - 1)
 
 # Keep only intervals 1-30

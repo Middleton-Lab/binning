@@ -1,13 +1,20 @@
 \name{A061105}
 \alias{A061105}
+\alias{B061105}
+\alias{C061105}
+\alias{D061105}
 \docType{data}
+
 \title{
-Wheel Running Data for 2006-11-05 for Computer A
+Example Wheel Running Data
 }
+
 \description{
-Wheel running data for 2006-11-05 for computer A.
+Wheel Running Data for 2006-11-05 for Computers A, B, C, and D
 }
+
 \usage{data(A061105)}
+
 \format{
   A data frame with 1385 observations on the following 157 variables.
   \describe{
@@ -170,17 +177,22 @@ Wheel running data for 2006-11-05 for computer A.
     \item{\code{V157}}{a numeric vector}
   }
 }
-\details{
+
+%\details{
 %%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
+%}
+
+%\source{
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
+%}
+
+%\references{
 %%  ~~ possibly secondary sources and usages ~~
-}
+%}
+
 \examples{
 data(A061105)
-## maybe str(A061105) ; plot(A061105) ...
+str(A061105)
+
 }
 \keyword{datasets}

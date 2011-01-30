@@ -95,6 +95,7 @@ if (start.at.1pm){
     # Adjust bin.start to reflect removed bins
     # Drop any intervals before 13:00
     # xx this line gets an error in R CMD check
+    hr <- NULL; rm(hr)
     whldat.str <- subset(whldat.str, hr != 12)
 }
 
