@@ -1,1 +1,5 @@
-.DS_Store .Rhistory
+# Ignores
+.DS_Store
+.Rhistory
+makepkg.sh
+
