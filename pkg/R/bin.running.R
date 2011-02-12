@@ -1,5 +1,5 @@
 bin.running <- function(whldat,
-#						whl = 'ALL',
+#			whl = 'ALL',
                         bin.size,
                         bins.out = 'ALL',
                         bin.start = 1,
