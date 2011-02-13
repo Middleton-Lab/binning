@@ -1,60 +1,15 @@
 \name{stackdata}
 \alias{stackdata}
-\title{
-Stack data frames on top of one another.
+\title{Stack Data Frames}
+\usage{stackdata(...)
 }
-\description{
-Take an arbitrary number of aggregated data.frames in and return them as a single data.frame.
+\description{Stack data frames on top of one another.}
+\details{Take an arbitrary number of aggregated data.frames in and return them as a
+single data.frame.}
+\value{A data.frame with \dots stacked.}
+\author{Kevin Middleton (kmm@csusb.edu)}
+\seealso{\code{\link{rbind}}}
+\keyword{data}
+\arguments{\item{\dots}{data.frames to \code{rbind}}
 }
-\usage{
-stackdata(...)
-}
-%- maybe also 'usage' for other objects documented here.
-\arguments{
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
-}
-}
-%%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%%}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-%%\references{
-%% ~put references to the literature/web site here ~
-%%}
-\author{
-Kevin Middleton (kmm@csusb.edu)
-}
-%%\note{
-%%  ~~further notes~~
-%%}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(...){
-    # Need to deal with n.bins and time
-    # use match.arg()
-    nms <- names(list(...))
-    
-    stacked <- rbind(...)
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ data }
-\keyword{ internal }

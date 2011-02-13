@@ -1,198 +1,175 @@
 \name{A061105}
 \alias{A061105}
+\alias{A061105}
+\title{Example Wheel Running Data...}
+\description{Example Wheel Running Data
+Wheel Running Data for 2006-11-05 for Computers A, B, C, and D}
+\alias{A061105}
 \alias{B061105}
 \alias{C061105}
 \alias{D061105}
 \docType{data}
-
-\title{
-Example Wheel Running Data
-}
-
-\description{
-Wheel Running Data for 2006-11-05 for Computers A, B, C, and D
-}
-
-\usage{data(A061105)}
-
-\format{
-  A data frame with 1385 observations on the following 157 variables.
-  \describe{
-    \item{\code{V1}}{a numeric vector}
-    \item{\code{V2}}{a numeric vector}
-    \item{\code{V3}}{a numeric vector}
-    \item{\code{V4}}{a numeric vector}
-    \item{\code{V5}}{a numeric vector}
-    \item{\code{V6}}{a numeric vector}
-    \item{\code{V7}}{a numeric vector}
-    \item{\code{V8}}{a numeric vector}
-    \item{\code{V9}}{a numeric vector}
-    \item{\code{V10}}{a numeric vector}
-    \item{\code{V11}}{a numeric vector}
-    \item{\code{V12}}{a numeric vector}
-    \item{\code{V13}}{a numeric vector}
-    \item{\code{V14}}{a numeric vector}
-    \item{\code{V15}}{a numeric vector}
-    \item{\code{V16}}{a numeric vector}
-    \item{\code{V17}}{a numeric vector}
-    \item{\code{V18}}{a numeric vector}
-    \item{\code{V19}}{a numeric vector}
-    \item{\code{V20}}{a numeric vector}
-    \item{\code{V21}}{a numeric vector}
-    \item{\code{V22}}{a numeric vector}
-    \item{\code{V23}}{a numeric vector}
-    \item{\code{V24}}{a numeric vector}
-    \item{\code{V25}}{a numeric vector}
-    \item{\code{V26}}{a numeric vector}
-    \item{\code{V27}}{a numeric vector}
-    \item{\code{V28}}{a numeric vector}
-    \item{\code{V29}}{a numeric vector}
-    \item{\code{V30}}{a numeric vector}
-    \item{\code{V31}}{a numeric vector}
-    \item{\code{V32}}{a numeric vector}
-    \item{\code{V33}}{a numeric vector}
-    \item{\code{V34}}{a numeric vector}
-    \item{\code{V35}}{a numeric vector}
-    \item{\code{V36}}{a numeric vector}
-    \item{\code{V37}}{a numeric vector}
-    \item{\code{V38}}{a numeric vector}
-    \item{\code{V39}}{a numeric vector}
-    \item{\code{V40}}{a numeric vector}
-    \item{\code{V41}}{a numeric vector}
-    \item{\code{V42}}{a numeric vector}
-    \item{\code{V43}}{a numeric vector}
-    \item{\code{V44}}{a numeric vector}
-    \item{\code{V45}}{a numeric vector}
-    \item{\code{V46}}{a numeric vector}
-    \item{\code{V47}}{a numeric vector}
-    \item{\code{V48}}{a numeric vector}
-    \item{\code{V49}}{a numeric vector}
-    \item{\code{V50}}{a numeric vector}
-    \item{\code{V51}}{a numeric vector}
-    \item{\code{V52}}{a numeric vector}
-    \item{\code{V53}}{a numeric vector}
-    \item{\code{V54}}{a numeric vector}
-    \item{\code{V55}}{a numeric vector}
-    \item{\code{V56}}{a numeric vector}
-    \item{\code{V57}}{a numeric vector}
-    \item{\code{V58}}{a numeric vector}
-    \item{\code{V59}}{a numeric vector}
-    \item{\code{V60}}{a numeric vector}
-    \item{\code{V61}}{a numeric vector}
-    \item{\code{V62}}{a numeric vector}
-    \item{\code{V63}}{a numeric vector}
-    \item{\code{V64}}{a numeric vector}
-    \item{\code{V65}}{a numeric vector}
-    \item{\code{V66}}{a numeric vector}
-    \item{\code{V67}}{a numeric vector}
-    \item{\code{V68}}{a numeric vector}
-    \item{\code{V69}}{a numeric vector}
-    \item{\code{V70}}{a numeric vector}
-    \item{\code{V71}}{a numeric vector}
-    \item{\code{V72}}{a numeric vector}
-    \item{\code{V73}}{a numeric vector}
-    \item{\code{V74}}{a numeric vector}
-    \item{\code{V75}}{a numeric vector}
-    \item{\code{V76}}{a numeric vector}
-    \item{\code{V77}}{a numeric vector}
-    \item{\code{V78}}{a numeric vector}
-    \item{\code{V79}}{a numeric vector}
-    \item{\code{V80}}{a numeric vector}
-    \item{\code{V81}}{a numeric vector}
-    \item{\code{V82}}{a numeric vector}
-    \item{\code{V83}}{a numeric vector}
-    \item{\code{V84}}{a numeric vector}
-    \item{\code{V85}}{a numeric vector}
-    \item{\code{V86}}{a numeric vector}
-    \item{\code{V87}}{a numeric vector}
-    \item{\code{V88}}{a numeric vector}
-    \item{\code{V89}}{a numeric vector}
-    \item{\code{V90}}{a numeric vector}
-    \item{\code{V91}}{a numeric vector}
-    \item{\code{V92}}{a numeric vector}
-    \item{\code{V93}}{a numeric vector}
-    \item{\code{V94}}{a numeric vector}
-    \item{\code{V95}}{a numeric vector}
-    \item{\code{V96}}{a numeric vector}
-    \item{\code{V97}}{a numeric vector}
-    \item{\code{V98}}{a numeric vector}
-    \item{\code{V99}}{a numeric vector}
-    \item{\code{V100}}{a numeric vector}
-    \item{\code{V101}}{a numeric vector}
-    \item{\code{V102}}{a numeric vector}
-    \item{\code{V103}}{a numeric vector}
-    \item{\code{V104}}{a numeric vector}
-    \item{\code{V105}}{a numeric vector}
-    \item{\code{V106}}{a numeric vector}
-    \item{\code{V107}}{a numeric vector}
-    \item{\code{V108}}{a numeric vector}
-    \item{\code{V109}}{a numeric vector}
-    \item{\code{V110}}{a numeric vector}
-    \item{\code{V111}}{a numeric vector}
-    \item{\code{V112}}{a numeric vector}
-    \item{\code{V113}}{a numeric vector}
-    \item{\code{V114}}{a numeric vector}
-    \item{\code{V115}}{a numeric vector}
-    \item{\code{V116}}{a numeric vector}
-    \item{\code{V117}}{a numeric vector}
-    \item{\code{V118}}{a numeric vector}
-    \item{\code{V119}}{a numeric vector}
-    \item{\code{V120}}{a numeric vector}
-    \item{\code{V121}}{a numeric vector}
-    \item{\code{V122}}{a numeric vector}
-    \item{\code{V123}}{a numeric vector}
-    \item{\code{V124}}{a numeric vector}
-    \item{\code{V125}}{a numeric vector}
-    \item{\code{V126}}{a numeric vector}
-    \item{\code{V127}}{a numeric vector}
-    \item{\code{V128}}{a numeric vector}
-    \item{\code{V129}}{a numeric vector}
-    \item{\code{V130}}{a numeric vector}
-    \item{\code{V131}}{a numeric vector}
-    \item{\code{V132}}{a numeric vector}
-    \item{\code{V133}}{a numeric vector}
-    \item{\code{V134}}{a numeric vector}
-    \item{\code{V135}}{a numeric vector}
-    \item{\code{V136}}{a numeric vector}
-    \item{\code{V137}}{a numeric vector}
-    \item{\code{V138}}{a numeric vector}
-    \item{\code{V139}}{a numeric vector}
-    \item{\code{V140}}{a numeric vector}
-    \item{\code{V141}}{a numeric vector}
-    \item{\code{V142}}{a numeric vector}
-    \item{\code{V143}}{a numeric vector}
-    \item{\code{V144}}{a numeric vector}
-    \item{\code{V145}}{a numeric vector}
-    \item{\code{V146}}{a numeric vector}
-    \item{\code{V147}}{a numeric vector}
-    \item{\code{V148}}{a numeric vector}
-    \item{\code{V149}}{a numeric vector}
-    \item{\code{V150}}{a numeric vector}
-    \item{\code{V151}}{a numeric vector}
-    \item{\code{V152}}{a numeric vector}
-    \item{\code{V153}}{a numeric vector}
-    \item{\code{V154}}{a numeric vector}
-    \item{\code{V155}}{a numeric vector}
-    \item{\code{V156}}{a numeric vector}
-    \item{\code{V157}}{a numeric vector}
-  }
-}
-
-%\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-%}
-
-%\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-%}
-
-%\references{
-%%  ~~ possibly secondary sources and usages ~~
-%}
-
-\examples{
-data(A061105)
-str(A061105)
-
-}
+\format{A data frame with 1385 observations on the following 157 variables.
+\describe{
+\item{list("V1")}{a numeric vector}
+\item{list("V2")}{a numeric vector}
+\item{list("V3")}{a numeric vector}
+\item{list("V4")}{a numeric vector}
+\item{list("V5")}{a numeric vector}
+\item{list("V6")}{a numeric vector}
+\item{list("V7")}{a numeric vector}
+\item{list("V8")}{a numeric vector}
+\item{list("V9")}{a numeric vector}
+\item{list("V10")}{a numeric vector}
+\item{list("V11")}{a numeric vector}
+\item{list("V12")}{a numeric vector}
+\item{list("V13")}{a numeric vector}
+\item{list("V14")}{a numeric vector}
+\item{list("V15")}{a numeric vector}
+\item{list("V16")}{a numeric vector}
+\item{list("V17")}{a numeric vector}
+\item{list("V18")}{a numeric vector}
+\item{list("V19")}{a numeric vector}
+\item{list("V20")}{a numeric vector}
+\item{list("V21")}{a numeric vector}
+\item{list("V22")}{a numeric vector}
+\item{list("V23")}{a numeric vector}
+\item{list("V24")}{a numeric vector}
+\item{list("V25")}{a numeric vector}
+\item{list("V26")}{a numeric vector}
+\item{list("V27")}{a numeric vector}
+\item{list("V28")}{a numeric vector}
+\item{list("V29")}{a numeric vector}
+\item{list("V30")}{a numeric vector}
+\item{list("V31")}{a numeric vector}
+\item{list("V32")}{a numeric vector}
+\item{list("V33")}{a numeric vector}
+\item{list("V34")}{a numeric vector}
+\item{list("V35")}{a numeric vector}
+\item{list("V36")}{a numeric vector}
+\item{list("V37")}{a numeric vector}
+\item{list("V38")}{a numeric vector}
+\item{list("V39")}{a numeric vector}
+\item{list("V40")}{a numeric vector}
+\item{list("V41")}{a numeric vector}
+\item{list("V42")}{a numeric vector}
+\item{list("V43")}{a numeric vector}
+\item{list("V44")}{a numeric vector}
+\item{list("V45")}{a numeric vector}
+\item{list("V46")}{a numeric vector}
+\item{list("V47")}{a numeric vector}
+\item{list("V48")}{a numeric vector}
+\item{list("V49")}{a numeric vector}
+\item{list("V50")}{a numeric vector}
+\item{list("V51")}{a numeric vector}
+\item{list("V52")}{a numeric vector}
+\item{list("V53")}{a numeric vector}
+\item{list("V54")}{a numeric vector}
+\item{list("V55")}{a numeric vector}
+\item{list("V56")}{a numeric vector}
+\item{list("V57")}{a numeric vector}
+\item{list("V58")}{a numeric vector}
+\item{list("V59")}{a numeric vector}
+\item{list("V60")}{a numeric vector}
+\item{list("V61")}{a numeric vector}
+\item{list("V62")}{a numeric vector}
+\item{list("V63")}{a numeric vector}
+\item{list("V64")}{a numeric vector}
+\item{list("V65")}{a numeric vector}
+\item{list("V66")}{a numeric vector}
+\item{list("V67")}{a numeric vector}
+\item{list("V68")}{a numeric vector}
+\item{list("V69")}{a numeric vector}
+\item{list("V70")}{a numeric vector}
+\item{list("V71")}{a numeric vector}
+\item{list("V72")}{a numeric vector}
+\item{list("V73")}{a numeric vector}
+\item{list("V74")}{a numeric vector}
+\item{list("V75")}{a numeric vector}
+\item{list("V76")}{a numeric vector}
+\item{list("V77")}{a numeric vector}
+\item{list("V78")}{a numeric vector}
+\item{list("V79")}{a numeric vector}
+\item{list("V80")}{a numeric vector}
+\item{list("V81")}{a numeric vector}
+\item{list("V82")}{a numeric vector}
+\item{list("V83")}{a numeric vector}
+\item{list("V84")}{a numeric vector}
+\item{list("V85")}{a numeric vector}
+\item{list("V86")}{a numeric vector}
+\item{list("V87")}{a numeric vector}
+\item{list("V88")}{a numeric vector}
+\item{list("V89")}{a numeric vector}
+\item{list("V90")}{a numeric vector}
+\item{list("V91")}{a numeric vector}
+\item{list("V92")}{a numeric vector}
+\item{list("V93")}{a numeric vector}
+\item{list("V94")}{a numeric vector}
+\item{list("V95")}{a numeric vector}
+\item{list("V96")}{a numeric vector}
+\item{list("V97")}{a numeric vector}
+\item{list("V98")}{a numeric vector}
+\item{list("V99")}{a numeric vector}
+\item{list("V100")}{a numeric vector}
+\item{list("V101")}{a numeric vector}
+\item{list("V102")}{a numeric vector}
+\item{list("V103")}{a numeric vector}
+\item{list("V104")}{a numeric vector}
+\item{list("V105")}{a numeric vector}
+\item{list("V106")}{a numeric vector}
+\item{list("V107")}{a numeric vector}
+\item{list("V108")}{a numeric vector}
+\item{list("V109")}{a numeric vector}
+\item{list("V110")}{a numeric vector}
+\item{list("V111")}{a numeric vector}
+\item{list("V112")}{a numeric vector}
+\item{list("V113")}{a numeric vector}
+\item{list("V114")}{a numeric vector}
+\item{list("V115")}{a numeric vector}
+\item{list("V116")}{a numeric vector}
+\item{list("V117")}{a numeric vector}
+\item{list("V118")}{a numeric vector}
+\item{list("V119")}{a numeric vector}
+\item{list("V120")}{a numeric vector}
+\item{list("V121")}{a numeric vector}
+\item{list("V122")}{a numeric vector}
+\item{list("V123")}{a numeric vector}
+\item{list("V124")}{a numeric vector}
+\item{list("V125")}{a numeric vector}
+\item{list("V126")}{a numeric vector}
+\item{list("V127")}{a numeric vector}
+\item{list("V128")}{a numeric vector}
+\item{list("V129")}{a numeric vector}
+\item{list("V130")}{a numeric vector}
+\item{list("V131")}{a numeric vector}
+\item{list("V132")}{a numeric vector}
+\item{list("V133")}{a numeric vector}
+\item{list("V134")}{a numeric vector}
+\item{list("V135")}{a numeric vector}
+\item{list("V136")}{a numeric vector}
+\item{list("V137")}{a numeric vector}
+\item{list("V138")}{a numeric vector}
+\item{list("V139")}{a numeric vector}
+\item{list("V140")}{a numeric vector}
+\item{list("V141")}{a numeric vector}
+\item{list("V142")}{a numeric vector}
+\item{list("V143")}{a numeric vector}
+\item{list("V144")}{a numeric vector}
+\item{list("V145")}{a numeric vector}
+\item{list("V146")}{a numeric vector}
+\item{list("V147")}{a numeric vector}
+\item{list("V148")}{a numeric vector}
+\item{list("V149")}{a numeric vector}
+\item{list("V150")}{a numeric vector}
+\item{list("V151")}{a numeric vector}
+\item{list("V152")}{a numeric vector}
+\item{list("V153")}{a numeric vector}
+\item{list("V154")}{a numeric vector}
+\item{list("V155")}{a numeric vector}
+\item{list("V156")}{a numeric vector}
+\item{list("V157")}{a numeric vector}
+}}
 \keyword{datasets}
+\examples{data(A061105)
+str(A061105)}
+

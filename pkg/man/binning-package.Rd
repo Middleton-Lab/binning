@@ -1,13 +1,10 @@
 \name{binning-package}
 \alias{binning-package}
-\alias{binning}
-\docType{package}
+\alias{binning-package}
+\title{Binning Wheel Running Data...}
+\description{Binning Wheel Running Data}
+\details{Functions to aggregate wheel running.
 
-\title{Binning Wheel Running Data}
-
-\description{Functions to aggregate wheel running.}
-
-\details{
 \tabular{ll}{
 Package: \tab binning\cr
 Type: \tab Package\cr
@@ -16,21 +13,10 @@ Date: \tab 2011-01-30\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 LazyData: \tab yes\cr
-}
- An overview of how to use the package, including the most important functions 
-}
+}}
+\alias{binning-package}
+\alias{binning}
+\docType{package}
 \author{Kevin Middleton}
+\keyword{package}
 
-%\references{
-% Literature or other references for background information 
-%}
-
-\keyword{ package }
-
-%\seealso{
-% Optional links to other man pages, e.g. 
-% \code{\link[<pkg>:<pkg>-package]{<pkg>}} 
-%}
-
-%\examples{
-%}

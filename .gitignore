@@ -2,4 +2,7 @@
 .DS_Store
 .Rhistory
 makepkg.sh
+makepkg2.sh
 githowto.txt
+*.pdf
+

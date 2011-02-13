@@ -1,19 +1,25 @@
-#######################################################
-# function: read.dat
+##' Read Wheel Running Data
+##' 
+##' Read either a comma-separated (.DAT) or tab-delimited (.txt) wheel running
+##' data file.
+##' 
+##' @title Read Wheel Running Data
+##' 
+##' @param file either a comma-separated (.DAT) or tab-delimited (.txt) wheel
+##' running data file
+##' @param tab.delim Logical for whether the file is tab delimited or not. Default is FALSE,
+##' because unmodified DAT files are comma-separated.
+##' 
+##' @return A data.frame of wheel running data.
+##' 
+##' @author Kevin Middleton (kmm@@csusb.edu)
+##' 
+##' @keywords data
+##' 
 read.dat <- function(file, tab.delim = FALSE){
-
-# function to read .DAT files from wheel running computers
-# Created by Kevin Middleton (kmm@csusb.edu)
-# 10 Aug 2007 - First working version
-
-# file: path to DAT file
-# tab.delim: T/F for whether the file is tab delimited or not. Default is FALSE,
-#   becuse unmodified DAT files are comma-separated.
-# Returns a matrix whldat
-
-if (tab.delim) {
+  if (tab.delim) {
     whldat <- read.delim(file, header = FALSE, sep = '\t')
-    } else {
+  } else {
     whldat <- read.csv(file, header = FALSE)}
-whldat
+  return(whldat)
 }
