@@ -1,14 +1,14 @@
 Package: binning
-Type: Package
-Title: Binning wheel running data
-Version: 0.04-1
-Date: 2011-01-30
-Author: Kevin Middleton
 Maintainer: Kevin Middleton <kmm@csusb.edu>
-Description: Binning wheel running data
 License: GPL-2
-LazyLoad: yes
+Title: Binning wheel running data
 LazyData: yes
+Type: Package
+LazyLoad: yes
+Author: Kevin Middleton
+Description: Binning wheel running data
+Version: 0.04-2
+Date: 2011-03-30
 Collate: 'bin.running.before.R' 'bin.running.R'
     'binning-package.R' 'lineaggr.R' 'linetypeaggr.R'
     'plot.running.R' 'read.dat.R' 'stackdata.R'
