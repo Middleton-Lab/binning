@@ -1,3 +1,7 @@
 README binning
 man pages
 .Rd files
+
+plot.running() seems not to work.
+
+Write save aggregated data.
