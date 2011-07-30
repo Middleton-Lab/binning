@@ -1,20 +1,33 @@
 \name{bin.running.before}
 \alias{bin.running.before}
 \title{Aggregate Wheel Running Data Prior to a Bin}
-\usage{bin.running.before(whldat, bin.size, bin.start, computer)
+\usage{bin.running.before(bin.size, bins.out, bin.start, ...)
 }
 \description{Aggregate Wheel Running Data Prior to a Bin}
-\details{Aggregate wheel running data prior to a specfic bin}
+\details{Aggregate wheel running data prior to a specfic bin (i.e.,
+computer interval number).}
 \alias{bin.running.before}
-\value{A list containing
-\item{run}{Aggregated total revolutions per bin}
-\item{max}{Maximum number of revolutions per interval in a bin}
-\item{int}{Number of intervals in a bin with >0 revolutions}
-\item{rpm}{Mean RPM in a bin}}
-\author{Kevin Middleton}
-\arguments{\item{whldat}{A wheel data file}
-\item{bin.size}{Size of bin (minutes)}
-\item{bin.start}{Bin to start}
-\item{computer}{Name of computer (one of 'A', 'B', 'C', 'D', with quotes)}
+\value{An object of class \code{running}. See \code{\link{bin.running}}
+for additional details.}
+\author{Kevin Middleton (kmm@csusb.edu)}
+\seealso{\code{\link{bin.running}}}
+\keyword{file}
+\keyword{data}
+\arguments{\item{bin.size}{Size of bin (minutes)}
+\item{bins.out}{Number of bins to return}
+\item{bin.start}{Bin (interval) to start}
+\item{...}{Additional parameters passed to \code{bin.running()}}
 }
+\examples{# Load the 2006-11-05 running data for computer A
+data(A061105)
+
+# Aggregate running data into 10 * 10 minute bins starting
+# at interval 600
+A <- bin.running.before(whldat = A061105, computer = "A", 
+bin.start = 600,
+bin.size = 10, bins.out = 10)
+A$times
+A$run
+# Plot aggregated running data for wheel number 1.
+plot(A, whlnum = 1, whichplot = "run")}
 

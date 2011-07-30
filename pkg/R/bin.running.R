@@ -60,7 +60,7 @@
 ##' plot(A.aggr, whlnum = 1, whichplot = "run")
 ##' 
 bin.running <- function(whldat,
-##			whl = 'ALL',
+##			                whl = 'ALL',
                         bin.size,
                         bins.out = 'ALL',
                         bin.start = 1,
@@ -89,8 +89,10 @@ bin.running <- function(whldat,
   }
 
   ## Check the computer is A-D
-  if (!match(computer, c('A', 'B', 'C', 'D'), nomatch = FALSE, incomparables = FALSE)){
-    stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.", call. = FALSE)}
+  if (!match(computer, c('A', 'B', 'C', 'D'), 
+             nomatch = FALSE, incomparables = FALSE)){
+    stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.", 
+         call. = FALSE)}
 
   ## If no first bin size is specified, then set to bin size
   if (!exists('first.bin.size')) first.bin.size <- bin.size
@@ -103,9 +105,9 @@ bin.running <- function(whldat,
   ## xx Add a check that whl is within the range of computer
 
 
-##########################################
+  ##########################################
   ## END PRELIMINARIES
-##########################################
+  ##########################################
 
   ## Calculate the number of wheels (50 or 48)
   ## The first 7 columns are time/date information
@@ -128,7 +130,8 @@ bin.running <- function(whldat,
   ##	time (other than hour and min), date
   ##	The "seq" parameters remove the forward and backward columns,
   ##		leaving only the sum column
-  whldat.str <- whldat[ , -c(3:7, seq(8, ncol(whldat), 3), seq(9, ncol(whldat), 3))]
+  whldat.str <- whldat[ , -c(3:7, seq(8, ncol(whldat), 3), 
+                             seq(9, ncol(whldat), 3))]
 
   ## Rename the remaining columns: hr, min, and XX for wheel number
   names(whldat.str)[1] <- "hr"
@@ -163,13 +166,17 @@ bin.running <- function(whldat,
   }
 
   ## Remove rows in incomplete last bin (if incomplete)
-  if (leftover > 0) whldat.zero <- whldat.zero[1:(nrow(whldat.zero)-leftover),]
+  if (leftover > 0){
+    whldat.zero <- whldat.zero[1:(nrow(whldat.zero)-leftover),]
+  }
 
   ## Column used for aggregating
   minbin <- rep(1:n.bins, each = bin.size)
 
   ## Split off hour & minute columns
-  times <- data.frame(hr = whldat.zero$hr, minute = whldat.zero$min, minbin) 
+  times <- data.frame(hr = whldat.zero$hr, 
+                      minute = whldat.zero$min, 
+                      minbin) 
   whldat.zero <- whldat.zero[,-(1:2)]
 
   ## xxx
