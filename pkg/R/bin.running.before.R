@@ -10,6 +10,9 @@
 ##' @param bin.size Size of bin (minutes)
 ##' @param bins.out Number of bins to return
 ##' @param bin.start Bin (interval) to start
+##' @param reverse Should the resulting dat be reversed before
+##' being returned? Reversed data will go from newest to
+##' oldest.
 ##' @param ... Additional parameters passed to \code{bin.running()}
 ##' 
 ##' @return An object of class \code{running}. See \code{\link{bin.running}}
@@ -36,7 +39,8 @@
 ##' # Plot aggregated running data for wheel number 1.
 ##' plot(A, whlnum = 1, whichplot = "run")
 ##' 
-bin.running.before <- function(bin.size, bins.out, bin.start, ...){
+bin.running.before <- function(bin.size, bins.out, bin.start, 
+                               reverse = FALSE, ...){
   ## Find new bin.start to pass to bin.running
   newBin1 <- bin.start - (bins.out * bin.size)
   
@@ -45,6 +49,14 @@ bin.running.before <- function(bin.size, bins.out, bin.start, ...){
   
   ## Strip trailing rows from times
   b$times <- b$times[1:bins.out, ]
+  
+  if(reverse){
+    b$run <- b$run[, ncol(b$run):1]
+    b$max <- b$max[, ncol(b$max):1]
+    b$int <- b$int[, ncol(b$int):1]
+    b$rpm <- b$rpm[, ncol(b$rpm):1]
+    b$times <- b$times[nrow(b$times):1, ]
+  }
   
   return(b)
 }
