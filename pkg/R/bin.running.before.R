@@ -11,7 +11,7 @@
 ##' @param bins.out Number of bins to return
 ##' @param bin.start Bin (interval) to start
 ##' @param reverse Should the resulting dat be reversed before
-##' being returned? Reversed data will go from newest to
+##' being returned? Reversed data will go from most recent to
 ##' oldest.
 ##' @param ... Additional parameters passed to \code{bin.running()}
 ##' 
