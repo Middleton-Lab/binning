@@ -42,7 +42,7 @@
 bin.running.before <- function(bin.size, bins.out, bin.start, 
                                reverse = FALSE, ...){
   ## Find new bin.start to pass to bin.running
-  newBin1 <- bin.start - (bins.out * bin.size)
+  newBin1 <- bin.start - (bins.out * bin.size) - 1
   
   ## Call bin.running with the revised first bin #
   b <- bin.running(bin.size, bins.out, bin.start = newBin1, ...)

@@ -1,7 +1,7 @@
 \name{bin.running.before}
 \alias{bin.running.before}
 \title{Aggregate Wheel Running Data Prior to a Bin}
-\usage{bin.running.before(bin.size, bins.out, bin.start, ...)
+\usage{bin.running.before(bin.size, bins.out, bin.start, reverse=FALSE, ...)
 }
 \description{Aggregate Wheel Running Data Prior to a Bin}
 \details{Aggregate wheel running data prior to a specfic bin (i.e.,
@@ -16,6 +16,9 @@ for additional details.}
 \arguments{\item{bin.size}{Size of bin (minutes)}
 \item{bins.out}{Number of bins to return}
 \item{bin.start}{Bin (interval) to start}
+\item{reverse}{Should the resulting dat be reversed before
+being returned? Reversed data will go from most recent to
+oldest.}
 \item{...}{Additional parameters passed to \code{bin.running()}}
 }
 \examples{# Load the 2006-11-05 running data for computer A
