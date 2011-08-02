@@ -8,8 +8,8 @@
 \tabular{ll}{
 Package: \tab binning\cr
 Type: \tab Package\cr
-Version: \tab 0.04-5\cr
-Date: \tab 2011-08-01\cr
+Version: \tab 0.04-6\cr
+Date: \tab 2011-08-02\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 LazyData: \tab yes\cr
