@@ -48,6 +48,8 @@
 ##' @seealso \code{\link{read.dat}}, \code{\link{plot.running}}
 ##' 
 ##' @keywords file data
+##'
+##' @export
 ##' 
 ##' @examples
 ##' 

@@ -17,6 +17,8 @@
 ##' @author Kevin Middleton (kmm@@csusb.edu)
 ##' 
 ##' @keywords data
+##'
+##' @export
 ##' 
 read.dat <- function(file, tab.delim = FALSE){
   if (tab.delim) {

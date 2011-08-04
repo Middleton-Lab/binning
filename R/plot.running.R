@@ -19,6 +19,9 @@
 ##' @seealso \code{\link{read.dat}}, \code{\link{bin.running}}
 ##' 
 ##' @keywords data
+##'
+##' @export
+##' @S3method plot running
 ##' 
 ##' @examples
 ##' 

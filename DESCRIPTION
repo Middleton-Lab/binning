@@ -7,8 +7,12 @@ Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
 Description: Binning wheel running data
-Version: 0.04-6
-Date: 2011-08-02
-Collate: 'bin.running.before.R' 'bin.running.R'
-    'binning-package.R' 'plot.running.R' 'read.dat.R'
+Version: 0.04-7
+Date: 2011-08-04
+Collate:
+    'bin.running.before.R'
+    'bin.running.R'
+    'binning-package.R'
+    'plot.running.R'
+    'read.dat.R'
     'stackdata.R'

@@ -1,0 +1,5 @@
+export(bin.running.before)
+export(bin.running)
+export(read.dat)
+export(stackdata)
+S3method(plot,running)

@@ -24,6 +24,8 @@
 ##' 
 ##' @keywords file data
 ##'
+##' @export
+##'
 ##' @examples
 ##' 
 ##' # Load the 2006-11-05 running data for computer A

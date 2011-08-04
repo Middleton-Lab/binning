@@ -14,6 +14,8 @@
 ##' @seealso \code{\link{rbind}}
 ##' 
 ##' @keywords data
+##'
+##' @export
 ##' 
 stackdata <- function(...){
   ## Need to deal with n.bins and time
