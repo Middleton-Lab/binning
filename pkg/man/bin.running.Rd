@@ -11,7 +11,8 @@ from which to start aggregating, \code{bin.running} takes a .DAT
 using \code{\link{read.dat}} and aggregates wheel revolutions, the maximum
 interval per bin, the number of intervals per bin with >0 revolutions, and
 the mean RPM per bin.}
-\value{\code{bin.running} returns an object of class \code{running}. This list contains
+\value{\code{bin.running} returns an object of class \code{running}. 
+This list contains
 \item{whlnum}{A vector of wheel numbers appropriate for \code{computer}}
 \item{run}{Aggregated total revolutions per bin}
 \item{max}{Maximum number of revolutions per interval in a bin}

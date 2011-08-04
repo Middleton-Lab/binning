@@ -25,7 +25,8 @@
 ##' @param header optional text string that can be used to label plots made
 ##'   with \code{\link{plot.running}}
 ##' 
-##' @return \code{bin.running} returns an object of class \code{running}. This list contains
+##' @return \code{bin.running} returns an object of class \code{running}. 
+##' This list contains
 ##' \item{whlnum}{A vector of wheel numbers appropriate for \code{computer}}
 ##' \item{run}{Aggregated total revolutions per bin}
 ##' \item{max}{Maximum number of revolutions per interval in a bin}
