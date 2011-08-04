@@ -24,6 +24,14 @@
   Read either a comma-separated (.DAT) or tab-delimited
   (.txt) wheel running data file.
 }
+\examples{
+A <- read.dat(system.file("extdata", "061105A.DAT", package="binning"))
+dim(A)
+
+D <- read.dat(system.file("extdata", "061105D.DAT", package="binning"))
+dim(D)
+# D has 6 fewer columns = 2 fewer wheels.
+}
 \author{
   Kevin Middleton (kmm@csusb.edu)
 }

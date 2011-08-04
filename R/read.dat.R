@@ -19,7 +19,14 @@
 ##' @keywords data
 ##'
 ##' @export
+##'
+##' @examples
+##' A <- read.dat(system.file("extdata", "061105A.DAT", package="binning"))
+##' dim(A)
 ##' 
+##' D <- read.dat(system.file("extdata", "061105D.DAT", package="binning"))
+##' dim(D)
+##' # D has 6 fewer columns = 2 fewer wheels.
 read.dat <- function(file, tab.delim = FALSE){
   if (tab.delim) {
     whldat <- read.delim(file, header = FALSE, sep = '\t')
