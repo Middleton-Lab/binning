@@ -72,19 +72,12 @@ bin.running <- function(whldat,
                         header = NULL
                         ){
 
-  ## 10 Aug 2007 - 0.00 Forked from aggr.running.R as a general function
-  ## 15 Aug 2007 - 0.01 First working version
-  ## 09 Apr 2009 - Resumed work
-  ##             - 0.02 added to github; work on documentation
-  ## 11 Apr 2009 - 0.03 Conversion to S3
-  ## 12 Feb 2011 - Changing to roxygen documentation.
-
   ##########################################
   ## PRELIMINARIES
   ##########################################
 
-  ## Check wheel running data. There should be either 157 or 151 columns corresponding
-  ##   to either 50 (A-C) or 48 wheels (D)
+  ## Check wheel running data. There should be either 157 or 151 
+  ## columns corresponding to either 50 (A-C) or 48 wheels (D)
   if (ncol(whldat) != 157){
     if (ncol(whldat) != 151){
       stop("The wheel running file does not have the correct number of columns.", call. = FALSE)
