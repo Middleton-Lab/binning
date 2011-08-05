@@ -1,0 +1,49 @@
+\name{exportXLS}
+\alias{exportXLS}
+\title{Export to Excel File}
+\usage{
+  exportXLS(x, which, file, ...)
+}
+\arguments{
+  \item{x}{An object of class binning to export.}
+
+  \item{which}{One of "run", "max", "rpm", "int", or "all".
+  If "all" is selected, all of the binned parameters will
+  be exported to separate sheets of the file named in
+  \code{file}.}
+
+  \item{...}{Additional parameters passed to
+  \code{WriteXLS()} (e.g., \code{BoldHeaderRow = TRUE} to
+  get a bold header row).}
+
+  \item{file}{The Excel files}
+}
+\description{
+  Export one or all parts of a binning class object to an
+  Excel spreadsheet with multiple worksheets.
+}
+\details{
+  The \code{exportXLS()} requires that the WriteXLS package
+  is installed and working correctly. Refer to the file
+  \code{INSTALL} page in the WriteXLS package for
+  additional details
+  (\url{http://cran.r-project.org/web/packages/WriteXLS/INSTALL}).
+  To make sure that your installation is complete, load the
+
+  The "times" tab includes the beginning times for all the
+  bins (columns) in the 1 or 4 preceeding tabs.
+}
+\examples{
+# Uncomment and run.
+#example(bin.running)
+#exportXLS(A.aggr, "R.xls", "all")
+#exportXLS(A.aggr, "R.xls", "rpm")
+}
+\author{
+  Kevin Middleton (kmm@csusb.edu)
+}
+\seealso{
+  \code{\link{binning}}, \code{\link[WriteXLS]{WriteXLS}}
+}
+\keyword{data}
+

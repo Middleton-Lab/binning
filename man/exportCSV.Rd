@@ -1,0 +1,39 @@
+\name{exportCSV}
+\alias{exportCSV}
+\title{Export to .csv Files}
+\usage{
+  exportCSV(x, which, filePrefix = "Rout_")
+}
+\arguments{
+  \item{x}{An object of class binning to export}
+
+  \item{which}{One of "run", "max", "rpm", "int", or "all".
+  If "all" is selected, all of the binned parameters will
+  be exported to separate .csv files.}
+
+  \item{filePrefix}{A string indicating the prefix for the
+  .csv files to be written.}
+}
+\description{
+  Export one or all parts of a binning class object to one
+  or more csv files.
+}
+\details{
+  At least two files are always written, using the prefix
+  specified by \code{filePrefix}. The "...times.csv" file
+  includes the beginning times for all the bins in the
+  other 1 or 4 files.
+}
+\examples{
+# Uncomment and run.
+#example(bin.running)
+#exportCSV(x, "R", "all")
+#exportCSV(x, "R", "rpm")
+}
+\author{
+  Kevin Middleton (kmm@csusb.edu)
+}
+\seealso{
+  \code{\link{binning}}, \code{\link{write.csv}}
+}
+

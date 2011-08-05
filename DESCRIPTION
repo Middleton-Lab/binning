@@ -7,8 +7,10 @@ Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
 Description: Binning wheel running data
-Version: 0.04-7
-Date: 2011-08-04
+Suggests:
+    WriteXLS
+Version: 0.05-1
+Date: 2011-08-05
 Collate:
     'bin.running.before.R'
     'bin.running.R'
@@ -16,3 +18,5 @@ Collate:
     'plot.running.R'
     'read.dat.R'
     'stackdata.R'
+    'exportCSV.R'
+    'exportXLS.R'
