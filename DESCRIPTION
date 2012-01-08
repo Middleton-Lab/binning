@@ -10,12 +10,11 @@ Description: Binning wheel running data
 Depends:
     reshape,
     plyr,
-    ggplot2,
-    gsubfn
+    ggplot2
 Suggests:
     WriteXLS
-Version: 0.06-1
-Date: 2012-01-07
+Version: 0.06-2
+Date: 2012-01-08
 Collate:
     'bin.running.before.R'
     'bin.running.R'

@@ -45,10 +45,7 @@ analyze_running <- function(file, drop.days = NULL){
   
   ## Function to pad with 0's
   pad_zero <- function(x){
-    y <- as.data.frame(do.call("rbind", 
-                             strapply(as.character(x), 
-                                      "(Wheel)(.*)", c,
-                                      perl = TRUE)))
+    y <- as.data.frame(do.call("rbind", strsplit(x, "Wheel")))
     y$V2 <- as.numeric(as.character(y$V2))
     y$padded <- ifelse(y$V2 <= 9, sprintf("%02d", y$V2), y$V2)
     y$Wheel <- paste("Wheel_", y$padded, sep = "")
