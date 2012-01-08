@@ -1,7 +1,7 @@
 ##' Stack data frames on top of one another.
 ##' 
-##' Take an arbitrary number of aggregated data.frames in and return them as a
-##' single data.frame.
+##' Take an arbitrary number of aggregated data.frames in and return
+##' them as a single data.frame.
 ##'
 ##' @title Stack Data Frames
 ##' 

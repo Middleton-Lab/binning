@@ -6,12 +6,12 @@
 ##' 
 ##' @method plot running
 ##' 
-##' @param x an object of class \code{running}, most likely returned by
-##' \code{bin.running}.
-##' @param whlnum number of wheel to plot running data for. Currently only one
-##' number is accepted.
-##' @param whichplot which set of aggregated data will be plotted: \code{run},
-##' \code{max}, \code{int}, and \code{rpm} are valid.
+##' @param x an object of class \code{running}, most likely returned
+##' by \code{bin.running}.
+##' @param whlnum number of wheel to plot running data for. Currently
+##' only one number is accepted.
+##' @param whichplot which set of aggregated data will be plotted:
+##' \code{run}, \code{max}, \code{int}, and \code{rpm} are valid.
 ##' @param \dots further arguments passed to \code{plot}
 ##' 
 ##' @author Kevin Middleton (kmm@@csusb.edu)
