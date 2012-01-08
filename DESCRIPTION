@@ -7,7 +7,11 @@ Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
 Description: Binning wheel running data
-Requires: plyr, ggplot2, gsubfn
+Depends:
+    reshape,
+    plyr,
+    ggplot2,
+    gsubfn
 Suggests:
     WriteXLS
 Version: 0.06-1
