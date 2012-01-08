@@ -7,10 +7,11 @@ Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
 Description: Binning wheel running data
+Requires: plyr, ggplot2, gsubfn
 Suggests:
     WriteXLS
-Version: 0.05-1
-Date: 2011-08-05
+Version: 0.06-1
+Date: 2012-01-07
 Collate:
     'bin.running.before.R'
     'bin.running.R'
@@ -20,3 +21,5 @@ Collate:
     'stackdata.R'
     'exportCSV.R'
     'exportXLS.R'
+    'aggregate_running.R'
+    'analyze_running.R'

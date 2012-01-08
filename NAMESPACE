@@ -1,3 +1,5 @@
+export(aggregate_running)
+export(analyze_running)
 export(bin.running.before)
 export(bin.running)
 export(exportCSV)

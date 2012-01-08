@@ -2,8 +2,9 @@
 \alias{bin.running}
 \title{Aggregate Wheel Running Data}
 \usage{
-  bin.running(whldat, bin.size, bins.out = "ALL", bin.start
-  = 1, start.at.1pm = TRUE, computer, header = NULL)
+  bin.running(whldat, bin.size, bins.out = "ALL",
+    bin.start = 1, start.at.1pm = TRUE, computer,
+    header = NULL)
 }
 \arguments{
   \item{whldat}{an \code{n} intervals by 157 (computers
@@ -19,7 +20,7 @@
   bin (if necessary).}
 
   \item{bin.start}{the interval number where the binning
-  should start. Defaults to 1.}
+  should start.  Defaults to 1.}
 
   \item{start.at.1pm}{logical. if \code{TRUE} (default),
   \code{bin.running} will delete all intervals before 1:00

@@ -3,7 +3,7 @@
 \title{Plot Aggregated Wheel Running Data}
 \usage{
   \method{plot}{running} (x, whlnum, whichplot = "run",
-  ...)
+    ...)
 }
 \arguments{
   \item{x}{an object of class \code{running}, most likely

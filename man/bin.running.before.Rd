@@ -2,8 +2,8 @@
 \alias{bin.running.before}
 \title{Aggregate Wheel Running Data Prior to a Bin}
 \usage{
-  bin.running.before(bin.size, bins.out, bin.start, reverse
-  = FALSE, ...)
+  bin.running.before(bin.size, bins.out, bin.start,
+    reverse = FALSE, ...)
 }
 \arguments{
   \item{bin.size}{Size of bin (minutes)}
@@ -37,8 +37,8 @@ data(A061105)
 # Aggregate running data into 10 * 10 minute bins starting
 # at interval 600
 A <- bin.running.before(whldat = A061105, computer = "A",
-bin.start = 600,
-bin.size = 10, bins.out = 10)
+                        bin.start = 600,
+                        bin.size = 10, bins.out = 10)
 A$times
 A$run
 # Plot aggregated running data for wheel number 1.
