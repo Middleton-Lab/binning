@@ -53,20 +53,13 @@ analyze_running <- function(file, drop.days = NULL){
   }
   
   dm$Wheel <- as.factor(pad_zero(dm$Wheel))
-  
-  p1 <- ggplot(dm, aes(x = Date, y = Revs))
-  p2 <- p1 + geom_line(aes(group = Wheel, color = Wheel)) + ylab("Revolutions") +
-    opts(legend.position = "none")
-  p3 <- p1 + geom_line() + facet_grid(Wheel ~ .) + ylab("Revolutions") +
-    opts(legend.position = "none")
-  
-  ggsave(filename = "Running_all.pdf", plot = p2, width = 10, height = 7.5)
-  ggsave(filename = "Running_individual.pdf", plot = p3, width = 7.5, height = 30)
-  
+    
   Last2 <- data.frame(Wheel = pad_zero(rownames(dt)),
                       SumLast2Nights = dt[, (ncol(dt)-1)] + dt[, ncol(dt)])
   rownames(Last2) <- NULL
   Last2 <- Last2[order(Last2$Wheel), ]
-  Last2
+  print(Last20)
+  
+  return(dm)    
 }
 

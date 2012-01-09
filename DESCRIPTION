@@ -13,7 +13,7 @@ Depends:
     ggplot2
 Suggests:
     WriteXLS
-Version: 0.06-2
+Version: 0.07-1
 Date: 2012-01-08
 Collate:
     'bin.running.before.R'
@@ -26,3 +26,4 @@ Collate:
     'exportXLS.R'
     'aggregate_running.R'
     'analyze_running.R'
+    'plot_running.R'
