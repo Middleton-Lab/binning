@@ -13,8 +13,8 @@ Depends:
     ggplot2
 Suggests:
     WriteXLS
-Version: 0.07-2
-Date: 2012-01-08
+Version: 0.07-3
+Date: 2012-01-09
 Collate:
     'bin.running.before.R'
     'bin.running.R'
