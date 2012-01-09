@@ -45,7 +45,8 @@ analyze_running <- function(file, drop.days = NULL){
   
   ## Function to pad with 0's
   pad_zero <- function(x){
-    y <- as.data.frame(do.call("rbind", strsplit(x, "Wheel")))
+    y <- as.character(x)
+    y <- as.data.frame(do.call("rbind", strsplit(y, "Wheel")))
     y$V2 <- as.numeric(as.character(y$V2))
     y$padded <- ifelse(y$V2 <= 9, sprintf("%02d", y$V2), y$V2)
     y$Wheel <- paste("Wheel_", y$padded, sep = "")
@@ -58,7 +59,7 @@ analyze_running <- function(file, drop.days = NULL){
                       SumLast2Nights = dt[, (ncol(dt)-1)] + dt[, ncol(dt)])
   rownames(Last2) <- NULL
   Last2 <- Last2[order(Last2$Wheel), ]
-  print(Last20)
+  print(Last2)
   
   return(dm)    
 }
