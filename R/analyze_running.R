@@ -38,7 +38,7 @@ analyze_running <- function(file, drop.days = NULL){
   
   ## Drop days we don't want
   if (!is.null(drop.days)){
-    dm <- subset(dm, !Date %in% as.Date(drop.days))
+    dm <- dm[!dm$Date %in% as.Date(drop.days), ]
   }
   
   dm <- dm[dm$Revs > 0, ]

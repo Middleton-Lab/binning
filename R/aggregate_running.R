@@ -83,7 +83,7 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
   whldat <- list()
   for (i in seq_len(length(Wheels))){
     message("Processing ", Wheels[i])
-    whldat[[i]] <- subset(dat, Wheel == Wheels[i])
+    whldat[[i]] <- dat[dat$Wheel == Wheels[i], ]
   }
   names(whldat) <- Wheels
   
