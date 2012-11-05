@@ -9,7 +9,7 @@
 ##' 
 ##' @return A data.frame with \dots stacked.
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##' 
 ##' @seealso \code{\link{rbind}}
 ##' 

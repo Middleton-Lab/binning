@@ -38,7 +38,7 @@ plot(A.aggr, whlnum = 1, whichplot = 'int')
 plot(A.aggr, whlnum = 1, whichplot = 'rpm')
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{read.dat}}, \code{\link{bin.running}}

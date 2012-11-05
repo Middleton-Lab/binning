@@ -14,7 +14,7 @@
 ##' @param filePrefix A string indicating the prefix for the .csv
 ##' files to be written.
 ##'
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##'
 ##' @export
 ##' 

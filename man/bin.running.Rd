@@ -75,7 +75,7 @@ A.aggr <- bin.running(A061105, computer = "A", bin.size = 20)
 plot(A.aggr, whlnum = 1, whichplot = "run")
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{read.dat}}, \code{\link{plot.running}}

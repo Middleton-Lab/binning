@@ -14,7 +14,7 @@
 ##' \code{run}, \code{max}, \code{int}, and \code{rpm} are valid.
 ##' @param \dots further arguments passed to \code{plot}
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##' 
 ##' @seealso \code{\link{read.dat}}, \code{\link{bin.running}}
 ##' 

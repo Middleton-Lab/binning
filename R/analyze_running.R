@@ -14,7 +14,7 @@
 ##' @return A data.frame with the wheels and summed revolutions for
 ##' the last two days of running.
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##'
 ##' @keywords file data
 ##'

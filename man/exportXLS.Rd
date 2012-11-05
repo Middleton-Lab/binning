@@ -40,7 +40,7 @@
 #exportXLS(A.aggr, "R.xls", "rpm")
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{binning}}, \code{\link[WriteXLS]{WriteXLS}}

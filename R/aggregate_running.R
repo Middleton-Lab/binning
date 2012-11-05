@@ -17,7 +17,7 @@
 ##' should also be sopplied as a quoted string in the format
 ##' \code{"2011-12-31"}.
 ##' 
-##' @author Kevin Middleton {kmm@@csusb.edu}
+##' @author Kevin Middleton {middletonk@@missouri.edu}
 ##'
 ##' @seealso \code{\link{analyze_running}}
 ##'

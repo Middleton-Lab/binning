@@ -45,7 +45,7 @@ A$run
 plot(A, whlnum = 1, whichplot = "run")
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{bin.running}}

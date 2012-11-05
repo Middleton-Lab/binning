@@ -33,7 +33,7 @@ dim(D)
 # D has 6 fewer columns = 2 fewer wheels.
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \keyword{data}
 

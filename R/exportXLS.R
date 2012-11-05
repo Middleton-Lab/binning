@@ -21,7 +21,7 @@
 ##' (e.g., \code{BoldHeaderRow = TRUE} to get a bold header row).
 ##' @param file The Excel files
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##'
 ##' @export
 ##'

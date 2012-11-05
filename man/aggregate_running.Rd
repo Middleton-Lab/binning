@@ -28,7 +28,7 @@
   that includes the aggregated data.
 }
 \author{
-  Kevin Middleton {kmm@csusb.edu}
+  Kevin Middleton {middletonk@missouri.edu}
 }
 \seealso{
   \code{\link{analyze_running}}

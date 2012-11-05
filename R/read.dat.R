@@ -14,7 +14,7 @@
 ##' 
 ##' @return A data.frame of wheel running data.
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##' 
 ##' @keywords data
 ##'

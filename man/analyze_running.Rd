@@ -25,7 +25,7 @@
   summary output.
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \keyword{data}
 \keyword{file}

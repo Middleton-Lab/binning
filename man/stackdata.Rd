@@ -18,7 +18,7 @@
   return them as a single data.frame.
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{rbind}}

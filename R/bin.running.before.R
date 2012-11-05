@@ -18,7 +18,7 @@
 ##' @return An object of class \code{running}. See \code{\link{bin.running}}
 ##' for additional details.
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##' 
 ##' @seealso \code{\link{bin.running}}
 ##' 

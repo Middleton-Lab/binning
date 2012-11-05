@@ -43,7 +43,7 @@
 ##' data were recorded} \item{header}{Optional text string header
 ##' identifying the data}
 ##' 
-##' @author Kevin Middleton (kmm@@csusb.edu)
+##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##' 
 ##' @seealso \code{\link{read.dat}}, \code{\link{plot.running}}
 ##' 

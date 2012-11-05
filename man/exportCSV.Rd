@@ -31,7 +31,7 @@
 #exportCSV(x, "R", "rpm")
 }
 \author{
-  Kevin Middleton (kmm@csusb.edu)
+  Kevin Middleton (middletonk@missouri.edu)
 }
 \seealso{
   \code{\link{binning}}, \code{\link{write.csv}}
