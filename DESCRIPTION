@@ -8,11 +8,12 @@ LazyLoad: yes
 Author: Kevin Middleton
 Description: Binning wheel running data
 Depends:
+    R (>= 2.15),
     ggplot2
 Suggests:
     WriteXLS
-Version: 0.07-5
-Date: 2012-01-13
+Version: 0.08-1
+Date: 2012-11-05
 Collate:
     'bin.running.before.R'
     'bin.running.R'
