@@ -29,6 +29,7 @@
   additional details
   (\url{http://cran.r-project.org/web/packages/WriteXLS/INSTALL}).
   To make sure that your installation is complete, load the
+  WriteXLS package and execute \code{testPerl()}.
 
   The "times" tab includes the beginning times for all the
   bins (columns) in the 1 or 4 preceeding tabs.

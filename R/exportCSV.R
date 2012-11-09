@@ -1,18 +1,18 @@
-##' Export one or all parts of a binning class object to one or more
+##' Export one or all parts of a binning class object to one or more 
 ##' csv files.
-##'
-##' At least two files are always written, using the prefix specified
-##' by \code{filePrefix}. The "...times.csv" file includes the
+##' 
+##' At least two files are always written, using the prefix specified 
+##' by \code{filePrefix}. The "...times.csv" file includes the 
 ##' beginning times for all the bins in the other 1 or 4 files.
 ##' 
 ##' @title Export to .csv Files
-##' 
+##'   
 ##' @param x An object of class binning to export
 ##' @param which One of "run", "max", "rpm", "int", or "all". If "all"
-##' is selected, all of the binned parameters will be exported to
-##' separate .csv files.
-##' @param filePrefix A string indicating the prefix for the .csv
-##' files to be written.
+##'   is selected, all of the binned parameters will be exported to 
+##'   separate .csv files.
+##' @param filePrefix A string indicating the prefix for the .csv 
+##'   files to be written.
 ##'
 ##' @author Kevin Middleton (middletonk@@missouri.edu)
 ##'

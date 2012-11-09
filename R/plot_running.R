@@ -3,11 +3,14 @@
 ##' Create diagnostic plots for wheel running data,
 ##' 
 ##' @title Plot wheel running (new system)
-##' 
-##' @param data Data.frame returned from \code{\link{analyze_running}}.
+##'   
+##' @param data Data.frame returned from
+##'   \code{\link{analyze_running}}.
+##'   
 ##' @param save Boolean (default = FALSE) Should plots be saved?
-##' @param start.at.0 Boolean (default = TRUE) Should y-axis start 
-## 'at 0?
+##'   
+##' @param start.at.0 Boolean (default = TRUE) Should y-axis start at
+##'   0?
 ##' 
 ##' @author Kevin Middleton
 ##'

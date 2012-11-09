@@ -12,7 +12,7 @@
   read in using \code{\link{read.dat}.}}
 
   \item{bin.size}{the size (in minutes) of the bins to
-  return. Defaults to 10 minute bins.}
+  return.  Defaults to 10 minute bins.}
 
   \item{bins.out}{number of bins to return. Defaults to
   \code{'ALL'} -- Start at the first row and bin all the

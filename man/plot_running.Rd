@@ -12,7 +12,7 @@
   saved?}
 
   \item{start.at.0}{Boolean (default = TRUE) Should y-axis
-  start}
+  start at 0?}
 }
 \description{
   Plot wheel running (new system)

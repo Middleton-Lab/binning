@@ -1,6 +1,6 @@
 ##' Aggregate Wheel Running Data Prior to a Bin
 ##' 
-##' Aggregate wheel running data prior to a specfic bin (i.e.,
+##' Aggregate wheel running data prior to a specfic bin (i.e., 
 ##' computer interval number).
 ##'
 ##' @title Aggregate Wheel Running Data Prior to a Bin
@@ -10,9 +10,8 @@
 ##' @param bin.size Size of bin (minutes)
 ##' @param bins.out Number of bins to return
 ##' @param bin.start Bin (interval) to start
-##' @param reverse Should the resulting dat be reversed before
-##' being returned? Reversed data will go from most recent to
-##' oldest.
+##' @param reverse Should the resulting dat be reversed before being
+##'   returned? Reversed data will go from most recent to oldest.
 ##' @param ... Additional parameters passed to \code{bin.running()}
 ##' 
 ##' @return An object of class \code{running}. See \code{\link{bin.running}}
