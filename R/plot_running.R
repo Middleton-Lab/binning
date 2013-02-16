@@ -1,3 +1,6 @@
+## See http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when
+utils::globalVariables(c("Date", "Revs", "Wheel"), package = "binning")
+
 ##' Plot wheel running (new system)
 ##'
 ##' Create diagnostic plots for wheel running data,
@@ -17,6 +20,7 @@
 ##' @export
 ##' 
 plot_running <- function(data, save = FALSE, start.at.0 = TRUE){
+    
   dm <- data
     
   p1 <- ggplot(dm, aes(x = Date, y = Revs))
