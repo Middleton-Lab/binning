@@ -72,6 +72,10 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
   names(dat) <- c("Wheel", "TimeStamp")
   message("Read ", nrow(dat), " revolutions.")
   
+  ## Drop duplicated rows (phantom revolutions)
+  ## It's unlikely that two sensors will record at the same 0.001 sec
+  dat <- drop_dupes(dat)
+  
   ## Strip milliseconds
   dat$TimeStamp <- gsub(".{4}$", "", dat$TimeStamp)
   
@@ -86,19 +90,7 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
     whldat[[i]] <- dat[dat$Wheel == Wheels[i], ]
   }
   names(whldat) <- Wheels
-  
-  ## Function to aggregate
-  agg.revs <- function(x, start.date, end.date, by){
-    start.at <- as.POSIXlt(paste(start.date, "12:00:00"), 
-                           format = "%Y-%m-%d %H:%M:%S")
-    end.at <- as.POSIXlt(paste(end.date, "12:00:00"), 
-                         format = "%Y-%m-%d %H:%M:%S")
-    bins <- cut(x$TimeStamp, breaks = seq(from = start.at,
-                               to = end.at,
-                               by = by))
-    table(bins)
-  }
-  
+    
   ## Aggregate by day
   message("Aggregating data by ", by, ".") 
   agg.dat <- lapply(whldat, FUN = agg.revs, start.date, end.date, by)
