@@ -14,7 +14,7 @@
 ##'   (default), \code{"min"}, \code{"hour"}, etc. See 
 ##'   \code{\link{seq.POSIXt}} for more options.
 ##' @param ... If \code{all = TRUE}, then \code{start} and \code{end} 
-##'   should also be sopplied as a quoted string in the format 
+##'   should also be supplied as a quoted string in the format 
 ##'   \code{"2011-12-31"}.
 ##' 
 ##' @author Kevin Middleton {middletonk@@missouri.edu}
