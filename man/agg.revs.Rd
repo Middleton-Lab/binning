@@ -1,0 +1,28 @@
+\name{agg.revs}
+\alias{agg.revs}
+\title{Aggregate Wheel Revolutions}
+\usage{
+  agg.revs(x, start.date, end.date, by)
+}
+\arguments{
+  \item{x}{data.frame with wheel revolutions}
+
+  \item{start.date}{Date to start aggregating}
+
+  \item{end.date}{Date to end aggregating}
+
+  \item{by}{Time period to aggregate by.}
+}
+\value{
+  A table of bins
+}
+\description{
+  Aggregate wheel revolutions
+}
+\details{
+  Aggregate revolutions by the \code{by} parameter.
+}
+\author{
+  Kevin Middleton
+}
+
