@@ -9,11 +9,12 @@ Author: Kevin Middleton
 Description: Binning wheel running data
 Depends:
     R (>= 2.15),
-    ggplot2
+    ggplot2,
+    reshape
 Suggests:
     WriteXLS
-Version: 0.08-1
-Date: 2012-11-05
+Version: 0.08-2
+Date: 2013-02-16
 Collate:
     'bin.running.before.R'
     'bin.running.R'
@@ -26,3 +27,5 @@ Collate:
     'aggregate_running.R'
     'analyze_running.R'
     'plot_running.R'
+    'agg.revs.R'
+    'drop_dupes.R'
