@@ -75,6 +75,7 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
   ## Drop duplicated rows (phantom revolutions)
   ## It's unlikely that two sensors will record at the same 0.001 sec
   dat <- drop_dupes(dat)
+  message(nrow(dat), " revolutions remain.")
   
   ## Strip milliseconds
   dat$TimeStamp <- gsub(".{4}$", "", dat$TimeStamp)
