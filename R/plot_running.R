@@ -27,17 +27,17 @@ plot_running <- function(data, save = FALSE, start.at.0 = TRUE){
   p2 <- p1 +
     geom_line(aes(group = Wheel, color = Wheel)) +
     ylab("Revolutions") +
-    opts(legend.position = "none")
+    theme(legend.position = "none")
   p3 <- p1 +
     geom_line() +
     facet_grid(Wheel ~ .) +
     ylab("Revolutions") +
-    opts(legend.position = "none")
+    theme(legend.position = "none")
 
   if (start.at.0){
     ymax <- max(dm$Revs) + 0.1 * max(dm$Revs)
-    p2 <- p2 + ylim(0, ymax)
-    p3 <- p2 + ylim(0, ymax)
+    p2 <- p2 + scale_y_continuous(limits = c(0, ymax))
+    p3 <- p3 + scale_y_continuous(limits = c(0, ymax))
   }
     
   if (save){

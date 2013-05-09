@@ -2,7 +2,8 @@
 \alias{aggregate_running}
 \title{Aggregate running (new system)}
 \usage{
-  aggregate_running(all = FALSE, by = "day", ...)
+  aggregate_running(all = FALSE, by = "day",
+    analyze = FALSE, ...)
 }
 \arguments{
   \item{all}{boolean: If \code{TRUE} (default), all
@@ -15,6 +16,9 @@
   be one of: \code{"day"} (default), \code{"min"},
   \code{"hour"}, etc. See \code{\link{seq.POSIXt}} for more
   options.}
+
+  \item{analyze}{boolean: If \code{TRUE} (default is
+  \code{FALSE}), also run \code{analyze_runnung()}.}
 
   \item{...}{If \code{all = TRUE}, then \code{start} and
   \code{end} should also be supplied as a quoted string in

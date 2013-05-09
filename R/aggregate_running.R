@@ -13,6 +13,8 @@
 ##'   passed to \code{seq.POSIXt()} and should be one of: \code{"day"}
 ##'   (default), \code{"min"}, \code{"hour"}, etc. See 
 ##'   \code{\link{seq.POSIXt}} for more options.
+##' @param analyze boolean: If \code{TRUE} (default is \code{FALSE}), 
+##' also run \code{analyze_runnung()}.
 ##' @param ... If \code{all = TRUE}, then \code{start} and \code{end} 
 ##'   should also be supplied as a quoted string in the format 
 ##'   \code{"2011-12-31"}.
@@ -25,7 +27,10 @@
 ##' 
 ##' @export
 ##' 
-aggregate_running <- function(all = FALSE, by = "day", ...){
+aggregate_running <- function(all = FALSE,
+                              by = "day",
+                              analyze = FALSE,
+                              ...){
   now <- Sys.time()
   if (all){
     ## Get list of files
@@ -93,7 +98,11 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
   names(whldat) <- Wheels
     
   ## Aggregate by day
-  message("Aggregating data by ", by, ".") 
+  message("Aggregating data by ", by, " from ", start.date, 
+          " to ", end.date, ".")
+  message("Each day runs from 12:00 to 11:59 the next day.") 
+  message("Note that any revolutions before 12:00 on ", start.date,
+          " or after 12:00 on ", end.date, " will be deleted.")
   agg.dat <- lapply(whldat, FUN = agg.revs, start.date, end.date, by)
   rm(whldat)
   
@@ -106,4 +115,8 @@ aggregate_running <- function(all = FALSE, by = "day", ...){
   write.csv(wide.dat, file = outfile, row.names = FALSE)
   message("Wrote file: ", outfile)
   Sys.time() - now
+  if (analyze) {
+    run <- analyze_running(outfile)
+    return(run)
+  }
 }
