@@ -11,9 +11,12 @@
 ##' @author Kevin Middleton
 ##' 
 drop_dupes <- function(dat){
-  deduped <- dat
   
-  deduped <- deduped[!duplicated(deduped$TimeStamp), ]
+  TimeStamps <- as.matrix(table(dat$TimeStamp))
+  Singletons <- TimeStamps[TimeStamps[, 1] == 1, ]
+  Singletons <- as.matrix(Singletons)
+  
+  deduped <- dat[dat$TimeStamp %in% rownames(Singletons), ]
   
   deduped
 }
