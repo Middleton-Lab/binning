@@ -1,5 +1,7 @@
 # Binning #
 
+[![Build Status](https://travis-ci.org/kmiddleton/binning.png?branch=master)](https://travis-ci.org/kmiddleton/binning)
+
 Functions to bin and aggregate wheel running data.
 
 # Installation #
