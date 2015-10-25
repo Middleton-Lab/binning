@@ -1,13 +1,13 @@
 Package: binning
 Maintainer: Kevin Middleton <middletonk@missouri.edu>
 License: GPL-2
-Title: Functions to Read and Bin Wheel Running Data
+Title: Bin Wheel Running Data
 LazyData: yes
 Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
-Description: Binning wheel running data. Able to handle old style
-  files or newer style files.
+Description: Functions to read, write and bin wheel running data.
+  Able to handle old style UCR files or newer style files.
 Depends:
     R (>= 3.2),
     ggplot2,
