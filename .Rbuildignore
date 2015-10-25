@@ -6,9 +6,6 @@
 ^sandbox$
 ^\..*\.swp$
 ^\..*\.swo$
-^abd.*\.gz$
 ^\.gitignore$
 ^\.git$
-^\.tigger$
-^\.tigger_completed$
 ^README\.md$
