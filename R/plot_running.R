@@ -4,25 +4,25 @@ utils::globalVariables(c("Date", "Revs", "Wheel"), package = "binning")
 #' Plot wheel running (new system)
 #'
 #' Create diagnostic plots for wheel running data,
-#' 
+#'
 #' @title Plot wheel running (new system)
-#'   
+#'
 #' @param data Data.frame returned from
 #'   \code{\link{analyze_running}}.
-#'   
+#'
 #' @param save Boolean (default = FALSE) Should plots be saved?
-#'   
+#'
 #' @param start.at.0 Boolean (default = TRUE) Should y-axis start at
 #'   0?
-#' 
+#'
 #' @author Kevin Middleton
 #'
 #' @export
-#' 
+#'
 plot_running <- function(data, save = FALSE, start.at.0 = TRUE){
-    
+
   dm <- data
-    
+
   p1 <- ggplot(dm, aes(x = Date, y = Revs))
   p2 <- p1 +
     geom_line(aes(group = Wheel, color = Wheel)) +
@@ -39,7 +39,7 @@ plot_running <- function(data, save = FALSE, start.at.0 = TRUE){
     p2 <- p2 + scale_y_continuous(limits = c(0, ymax))
     p3 <- p3 + scale_y_continuous(limits = c(0, ymax))
   }
-    
+
   if (save){
     ggsave(filename = "Running_all.pdf",
            plot = p2,

@@ -1,33 +1,33 @@
 #' Aggregate Wheel Running Data
-#' 
-#' Given an arbitrary bin size in minutes and an arbitrary interval 
+#'
+#' Given an arbitrary bin size in minutes and an arbitrary interval
 #' number from which to start aggregating, \code{bin.running} takes a
-#' .DAT (comma-separated) or .txt (tab-delimited) wheel running data 
-#' file read in using \code{\link{read.dat}} and aggregates wheel 
+#' .DAT (comma-separated) or .txt (tab-delimited) wheel running data
+#' file read in using \code{\link{read.dat}} and aggregates wheel
 #' revolutions, the maximum interval per bin, the number of intervals
 #' per bin with >0 revolutions, and the mean RPM per bin.
-#' 
+#'
 #' @title Aggregate Wheel Running Data
-#'   
-#' @param whldat an \code{n} intervals by 157 (computers A-C) or 151 
-#'   (computer D) column data.frame, most often read in using 
+#'
+#' @param whldat an \code{n} intervals by 157 (computers A-C) or 151
+#'   (computer D) column data.frame, most often read in using
 #'   \code{\link{read.dat}.}
 #' @param bin.size the size (in minutes) of the bins to return.
 #'   Defaults to 10 minute bins.
 #' @param bins.out number of bins to return. Defaults to \code{'ALL'}
-#'   -- Start at the first row and bin all the way to the end of the 
+#'   -- Start at the first row and bin all the way to the end of the
 #'   file, removing an incomplete last bin (if necessary).
-#' @param bin.start the interval number where the binning should 
+#' @param bin.start the interval number where the binning should
 #'   start.  Defaults to 1.
-#' @param start.at.1pm logical. if \code{TRUE} (default), 
+#' @param start.at.1pm logical. if \code{TRUE} (default),
 #'   \code{bin.running} will delete all intervals before 1:00 PM.
-#' @param computer text string code for which computer recorded 
+#' @param computer text string code for which computer recorded
 #'   \code{whldata}.
 #' @param header optional text string that can be used to label plots
 #'   made with \code{\link{plot.running}}
-#' 
-#' @return \code{bin.running} returns an object of class 
-#'   \code{running}.  This list contains \item{whlnum}{A vector of 
+#'
+#' @return \code{bin.running} returns an object of class
+#'   \code{running}.  This list contains \item{whlnum}{A vector of
 #'   wheel numbers appropriate for \code{computer}}
 #' \item{run}{Aggregated total revolutions per bin}
 #' \item{max}{Maximum number of revolutions per interval in a bin}
@@ -42,28 +42,28 @@
 #' 1:00 PM were truncated} \item{computer}{Computer from which the
 #' data were recorded} \item{header}{Optional text string header
 #' identifying the data}
-#' 
+#'
 #' @author Kevin Middleton (middletonk@@missouri.edu)
-#' 
+#'
 #' @seealso \code{\link{read.dat}}, \code{\link{plot.running}}
-#' 
+#'
 #' @keywords file data
 #'
 #' @export
-#' 
+#'
 #' @examples
-#' 
+#'
 #' # Load the 2006-11-05 running data for computer A
 #' data(A061105)
-#' 
+#'
 #' # Aggregate running data into 20 minute bins
 #' A.aggr <- bin.running(A061105, computer = "A", bin.size = 20)
-#' 
+#'
 #' # Plot aggregated running data for wheel number 1.
 #' plot(A.aggr, whlnum = 1, whichplot = "run")
-#' 
+#'
 bin.running <- function(whldat,
-##	                whl = 'ALL',
+##                  whl = 'ALL',
                         bin.size,
                         bins.out = 'ALL',
                         bin.start = 1,
@@ -76,7 +76,7 @@ bin.running <- function(whldat,
   ## PRELIMINARIES
   ##########################################
 
-  ## Check wheel running data. There should be either 157 or 151 
+  ## Check wheel running data. There should be either 157 or 151
   ## columns corresponding to either 50 (A-C) or 48 wheels (D)
   if (ncol(whldat) != 157){
     if (ncol(whldat) != 151){
@@ -85,9 +85,9 @@ bin.running <- function(whldat,
   }
 
   ## Check the computer is A-D
-  if (!match(computer, c('A', 'B', 'C', 'D'), 
+  if (!match(computer, c('A', 'B', 'C', 'D'),
              nomatch = FALSE, incomparables = FALSE)){
-    stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.", 
+    stop("computer must be one of \'A\', \'B\', \'C\', or \'D\'.",
          call. = FALSE)}
 
   ## If no first bin size is specified, then set to bin size
@@ -123,10 +123,10 @@ bin.running <- function(whldat,
     stop("Computer D should have 48 wheels", call. = FALSE)}
 
   ## Remove columns we don't need:
-  ##	time (other than hour and min), date
-  ##	The "seq" parameters remove the forward and backward columns,
-  ##		leaving only the sum column
-  whldat.str <- whldat[ , -c(3:7, seq(8, ncol(whldat), 3), 
+  ##  time (other than hour and min), date
+  ##  The "seq" parameters remove the forward and backward columns,
+  ##    leaving only the sum column
+  whldat.str <- whldat[ , -c(3:7, seq(8, ncol(whldat), 3),
                              seq(9, ncol(whldat), 3))]
 
   ## Rename the remaining columns: hr, min, and XX for wheel number
@@ -170,15 +170,15 @@ bin.running <- function(whldat,
   minbin <- rep(1:n.bins, each = bin.size)
 
   ## Split off hour & minute columns
-  times <- data.frame(hr = whldat.zero$hr, 
-                      minute = whldat.zero$min, 
-                      minbin) 
+  times <- data.frame(hr = whldat.zero$hr,
+                      minute = whldat.zero$min,
+                      minbin)
   whldat.zero <- whldat.zero[,-(1:2)]
 
   ## xxx
   ##if (whl != 'ALL'){
-  ##	whldat.zero <- whldat.str[, whl]
-  ##	}
+  ##  whldat.zero <- whldat.str[, whl]
+  ##  }
 
   ## Aggregate wheel running sum revolutions per bin
   running <- matrix(data = NA, nrow = n.bins, ncol = numwhl)
@@ -244,7 +244,7 @@ bin.running <- function(whldat,
 
   ## Aggregate hours and minutes
   bin.times <- aggregate(
-                         list(times), 
+                         list(times),
                          by = list(bin = minbin),
                          FUN = min)[, -4]
 
@@ -253,11 +253,11 @@ bin.running <- function(whldat,
                   run = t.running,
                   max = t.maxint,
                   int = t.intsum,
-                  rpm = t.rpm, 
+                  rpm = t.rpm,
                   times = bin.times,
                   whldat = whldat,
                   bin.size = bin.size,
-                  n.bins = n.bins, 
+                  n.bins = n.bins,
                   bin.start = bin.start,
                   start.at.1pm = start.at.1pm,
                   computer = computer,
