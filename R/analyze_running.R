@@ -1,26 +1,26 @@
-##' Analyze running (new system)
-##'
-##' Analyze aggregated running data. Includes plots and summary
-##' output.
-##' 
-##' @title Analyze running (new system)
-##'   
-##' @param file Character string giving the \code{.csv} file to 
-##'   analyze. This file should have been written by 
-##'   \code{\link{aggregate_running}}.
-##' @param drop.days Vector of character strings giving any dates 
-##'   (e.g., \code{"2011-12-31"}) that should be dropped from the 
-##'   analysis.
-##' 
-##' @return A data.frame with the wheels and summed revolutions for
-##' the last two days of running.
-##' 
-##' @author Kevin Middleton (middletonk@@missouri.edu)
-##'
-##' @keywords file data
-##'
-##' @export
-##' 
+#' Analyze running (new system)
+#'
+#' Analyze aggregated running data. Includes plots and summary
+#' output.
+#' 
+#' @title Analyze running (new system)
+#'   
+#' @param file Character string giving the \code{.csv} file to 
+#'   analyze. This file should have been written by 
+#'   \code{\link{aggregate_running}}.
+#' @param drop.days Vector of character strings giving any dates 
+#'   (e.g., \code{"2011-12-31"}) that should be dropped from the 
+#'   analysis.
+#' 
+#' @return A data.frame with the wheels and summed revolutions for
+#' the last two days of running.
+#' 
+#' @author Kevin Middleton (middletonk@@missouri.edu)
+#'
+#' @keywords file data
+#'
+#' @export
+#' 
 analyze_running <- function(file, drop.days = NULL){
   d <- read.csv(file)
 
