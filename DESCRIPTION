@@ -1,7 +1,7 @@
 Package: binning
 Maintainer: Kevin Middleton <middletonk@missouri.edu>
 License: GPL-2
-Title: Binning wheel running data
+Title: Bin Wheel Running Data
 LazyData: yes
 Type: Package
 LazyLoad: yes
@@ -13,7 +13,7 @@ Depends:
     ggplot2,
     reshape,
     WriteXLS
-Version: 0.09
+Version: 0.9
 Date: 2015-10-25
 Collate:
     'bin.running.before.R'
