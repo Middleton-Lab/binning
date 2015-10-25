@@ -1,7 +1,7 @@
 Package: binning
 Maintainer: Kevin Middleton <middletonk@missouri.edu>
 License: GPL-2
-Title: Bin Wheel Running Data
+Title: Functions to Read and Bin Wheel Running Data
 LazyData: yes
 Type: Package
 LazyLoad: yes
