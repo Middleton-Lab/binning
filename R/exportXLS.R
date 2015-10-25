@@ -45,10 +45,6 @@ exportXLS <- function(x, which, file, ...){
     stop('"which" must be one of "run", "max", "rpm", "int", or "all".')
   }
 
-  if (!require(WriteXLS, quietly = TRUE)){
-    stop("Package WriteXLS not installed.")
-  }
-  
   assign("run", x$run)
   assign("max", x$max)
   assign("rpm", x$rpm)
@@ -56,10 +52,10 @@ exportXLS <- function(x, which, file, ...){
   assign("times", x$times)
 
   if (which == "all"){
-    WriteXLS(c("run", "max", "rpm", "int", "times"),
+    WriteXLS::WriteXLS(c("run", "max", "rpm", "int", "times"),
              ExcelFileName = file, ...)
   } else {
-    WriteXLS(c(paste(which), "times"), 
+    WriteXLS::WriteXLS(c(paste(which), "times"), 
              ExcelFileName = file,
              ...)
   }

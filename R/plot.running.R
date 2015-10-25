@@ -21,7 +21,6 @@
 ##' @keywords data
 ##'
 ##' @export
-##' @S3method plot running
 ##' 
 ##' @examples
 ##' 
