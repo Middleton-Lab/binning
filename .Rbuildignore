@@ -9,3 +9,5 @@
 ^\.gitignore$
 ^\.git$
 ^README\.md$
+^.travis.yml$
+^travis-linter.sh$
