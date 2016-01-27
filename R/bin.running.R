@@ -110,17 +110,17 @@ bin.running <- function(whldat,
   numwhl <- (ncol(whldat)-7)/3
 
   ## Check for the right number of wheels for the chosen computer.
-  if (computer == 'A' & numwhl != 50){
-    stop("Computer A should have 50 wheels", call. = FALSE)}
-
-  if (computer == 'B' & numwhl != 50){
-    stop("Computer B should have 50 wheels", call. = FALSE)}
-
-  if (computer == 'C' & numwhl != 50){
-    stop("Computer C should have 50 wheels", call. = FALSE)}
-
-  if (computer == 'D' & numwhl != 48){
-    stop("Computer D should have 48 wheels", call. = FALSE)}
+  # if (computer == 'A' & numwhl != 50){
+  #   stop("Computer A should have 50 wheels", call. = FALSE)}
+  #
+  # if (computer == 'B' & numwhl != 50){
+  #   stop("Computer B should have 50 wheels", call. = FALSE)}
+  #
+  # if (computer == 'C' & numwhl != 50){
+  #   stop("Computer C should have 50 wheels", call. = FALSE)}
+  #
+  # if (computer == 'D' & numwhl != 48){
+  #   stop("Computer D should have 48 wheels", call. = FALSE)}
 
   ## Remove columns we don't need:
   ##  time (other than hour and min), date

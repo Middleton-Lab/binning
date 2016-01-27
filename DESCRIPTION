@@ -7,7 +7,7 @@ Type: Package
 LazyLoad: yes
 Author: Kevin Middleton
 Description: Functions to read, write and bin wheel running data.
-  Able to handle old style UCR files or newer style files.
+    Able to handle old style UCR files or newer style files.
 Depends:
     R (>= 3.2),
     ggplot2,
@@ -29,3 +29,4 @@ Collate:
     'plot_running.R'
     'agg.revs.R'
     'drop_dupes.R'
+RoxygenNote: 5.0.1
