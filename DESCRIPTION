@@ -13,8 +13,8 @@ Depends:
     ggplot2,
     reshape,
     WriteXLS
-Version: 0.9
-Date: 2015-10-25
+Version: 1.0
+Date: 2016-01-27
 Collate:
     'bin.running.before.R'
     'bin.running.R'

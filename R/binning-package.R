@@ -5,8 +5,8 @@
 #' \tabular{ll}{
 #' Package: \tab binning\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.9\cr
-#' Date: \tab 2015-10-25\cr
+#' Version: \tab 1.0\cr
+#' Date: \tab 2016-01-27\cr
 #' License: \tab GPL-2\cr
 #' LazyLoad: \tab yes\cr
 #' LazyData: \tab yes\cr
