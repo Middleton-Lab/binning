@@ -240,7 +240,7 @@ bin.running <- function(whldat,
   if (computer == 'A') whlnum <-   1:50
   if (computer == 'B') whlnum <-  51:100
   if (computer == 'C') whlnum <- 101:150
-  if (computer == 'D') whlnum <- 151:198
+  if (computer == 'D') whlnum <- 151:200
 
   ## Aggregate hours and minutes
   bin.times <- aggregate(
