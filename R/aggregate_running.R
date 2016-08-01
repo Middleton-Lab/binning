@@ -112,10 +112,15 @@ aggregate_running <- function(all = FALSE,
   rm(whldat)
 
   ## Reformat and write out
+  # Format output POSIX string
+  if (by == "day") outstring <- "%m/%d/%Y"
+  if (by == "hr") outstring <- "%m/%d/%Y %H"
+  if (by == "min") outstring <- "%m/%d/%Y %H:%M"
+
   wide.dat <- t(do.call("rbind", agg.dat))
   wide.dat <- as.data.frame(wide.dat)
   wide.dat <- cbind(Date = format(as.POSIXlt(rownames(wide.dat)),
-                    "%m/%d/%Y"),
+                    outstring),
                     wide.dat)
   outfile <- paste(start.date, "_to_", end.date, ".csv", sep = "")
   write.csv(wide.dat, file = outfile, row.names = FALSE)
